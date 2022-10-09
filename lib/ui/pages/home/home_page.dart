@@ -26,8 +26,11 @@ class _HomePageState extends State<HomePage> {
       body: Center(
         child: Container(
           decoration: const BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage("lib/assets/bg-tile.png"), fit: BoxFit.cover)),
+            image: DecorationImage(
+              image: AssetImage("lib/assets/bg-tile.png"),
+              fit: BoxFit.cover,
+            ),
+          ),
           child: IndexedStack(
             index: _currentIndex,
             children: _content,
@@ -37,10 +40,18 @@ class _HomePageState extends State<HomePage> {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
         items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Jeu'),
-          BottomNavigationBarItem(icon: Icon(Icons.ac_unit), label: 'Tab 2'),
           BottomNavigationBarItem(
-              icon: Icon(Icons.account_balance_outlined), label: 'Profil')
+            icon: Icon(Icons.casino),
+            label: 'Jeu',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.group),
+            label: 'Classement',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.account_circle),
+            label: 'Profil',
+          ),
         ],
         onTap: (index) {
           setState(() {

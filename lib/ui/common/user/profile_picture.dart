@@ -6,75 +6,85 @@ class MeepleClipper extends CustomClipper<Path> {
     Path path_0 = Path();
     path_0.moveTo(size.width * 0.9999167, size.height * 0.4301917);
     path_0.cubicTo(
-        size.width * 1.005698,
-        size.height * 0.2926167,
-        size.width * 0.6763750,
-        size.height * 0.2256417,
-        size.width * 0.6621083,
-        size.height * 0.2099583);
+      size.width * 1.005698,
+      size.height * 0.2926167,
+      size.width * 0.6763750,
+      size.height * 0.2256417,
+      size.width * 0.6621083,
+      size.height * 0.2099583,
+    );
     path_0.cubicTo(
-        size.width * 0.6549990,
-        size.height * 0.2021621,
-        size.width * 0.6786092,
-        size.height * -0.0001500000,
-        size.width * 0.5000000,
-        size.height * 4.736952e-17);
+      size.width * 0.6549990,
+      size.height * 0.2021621,
+      size.width * 0.6786092,
+      size.height * -0.0001500000,
+      size.width * 0.5000000,
+      size.height * 4.736952e-17,
+    );
     path_0.cubicTo(
-        size.width * 0.3213917,
-        size.height * -0.0001497417,
-        size.width * 0.3449917,
-        size.height * 0.2021583,
-        size.width * 0.3378833,
-        size.height * 0.2099583);
+      size.width * 0.3213917,
+      size.height * -0.0001497417,
+      size.width * 0.3449917,
+      size.height * 0.2021583,
+      size.width * 0.3378833,
+      size.height * 0.2099583,
+    );
     path_0.cubicTo(
-        size.width * 0.3236125,
-        size.height * 0.2256383,
-        size.width * -0.005691667,
-        size.height * 0.2926175,
-        size.width * 0.00008333333,
-        size.height * 0.4301917);
+      size.width * 0.3236125,
+      size.height * 0.2256383,
+      size.width * -0.005691667,
+      size.height * 0.2926175,
+      size.width * 0.00008333333,
+      size.height * 0.4301917,
+    );
     path_0.cubicTo(
-        size.width * 0.005841833,
-        size.height * 0.5677750,
-        size.width * 0.1805917,
-        size.height * 0.4971125,
-        size.width * 0.2178667,
-        size.height * 0.5376000);
+      size.width * 0.005841833,
+      size.height * 0.5677750,
+      size.width * 0.1805917,
+      size.height * 0.4971125,
+      size.width * 0.2178667,
+      size.height * 0.5376000,
+    );
     path_0.cubicTo(
-        size.width * 0.2504675,
-        size.height * 0.5730392,
-        size.width * 0.06507500,
-        size.height * 0.7998917,
-        size.width * 0.04434167,
-        size.height * 0.9439417);
+      size.width * 0.2504675,
+      size.height * 0.5730392,
+      size.width * 0.06507500,
+      size.height * 0.7998917,
+      size.width * 0.04434167,
+      size.height * 0.9439417,
+    );
     path_0.cubicTo(
-        size.width * 0.03758058,
-        size.height * 0.9908883,
-        size.width * 0.05078050,
-        size.height,
-        size.width * 0.09640833,
-        size.height);
+      size.width * 0.03758058,
+      size.height * 0.9908883,
+      size.width * 0.05078050,
+      size.height,
+      size.width * 0.09640833,
+      size.height,
+    );
     path_0.cubicTo(
-        size.width * 0.1791683,
-        size.height,
-        size.width * 0.2581750,
-        size.height * 0.9999512,
-        size.width * 0.3309417,
-        size.height * 0.9999512);
+      size.width * 0.1791683,
+      size.height,
+      size.width * 0.2581750,
+      size.height * 0.9999512,
+      size.width * 0.3309417,
+      size.height * 0.9999512,
+    );
     path_0.cubicTo(
-        size.width * 0.3638125,
-        size.height * 0.9999512,
-        size.width * 0.3755025,
-        size.height * 0.9810612,
-        size.width * 0.3924617,
-        size.height * 0.9550328);
+      size.width * 0.3638125,
+      size.height * 0.9999512,
+      size.width * 0.3755025,
+      size.height * 0.9810612,
+      size.width * 0.3924617,
+      size.height * 0.9550328,
+    );
     path_0.cubicTo(
-        size.width * 0.4300008,
-        size.height * 0.8974095,
-        size.width * 0.4753392,
-        size.height * 0.8047912,
-        size.width * 0.5000117,
-        size.height * 0.8047995);
+      size.width * 0.4300008,
+      size.height * 0.8974095,
+      size.width * 0.4753392,
+      size.height * 0.8047912,
+      size.width * 0.5000117,
+      size.height * 0.8047995,
+    );
     path_0.cubicTo(
         size.width * 0.5246733,
         size.height * 0.8047897,
@@ -118,6 +128,7 @@ class MeepleClipper extends CustomClipper<Path> {
         size.width * 0.9999333,
         size.height * 0.4301892);
     path_0.close();
+
     return path_0;
   }
 

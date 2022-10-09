@@ -5,30 +5,31 @@ class Button extends StatelessWidget {
   final String text;
   final IconData? icon;
 
-  const Button({Key? key, required this.onPressed, required this.text, this.icon})
+  const Button(
+      {Key? key, required this.onPressed, required this.text, this.icon})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    if (icon != null) {
-      return ElevatedButton.icon(
-        style: const ButtonStyle(
-          padding: MaterialStatePropertyAll(EdgeInsets.symmetric(vertical: 16, horizontal: 20))
-        ),
-          icon: Icon(
-              icon,
-            size: 18,
-          ),
-          onPressed: onPressed,
-          label: Text(text));
-    } else {
-      return ElevatedButton(
-          style: const ButtonStyle(
-              padding: MaterialStatePropertyAll(EdgeInsets.symmetric(vertical: 16, horizontal: 20))
-          ),
-          onPressed: onPressed,
-          child: Text(text));
-    }
-
+    return icon != null
+        ? ElevatedButton.icon(
+            style: const ButtonStyle(
+              padding: MaterialStatePropertyAll(
+                EdgeInsets.symmetric(vertical: 16, horizontal: 20),
+              ),
+            ),
+            icon: Icon(icon, size: 18),
+            onPressed: onPressed,
+            label: Text(text),
+          )
+        : ElevatedButton(
+            style: const ButtonStyle(
+              padding: MaterialStatePropertyAll(
+                EdgeInsets.symmetric(vertical: 16, horizontal: 20),
+              ),
+            ),
+            onPressed: onPressed,
+            child: Text(text),
+          );
   }
 }
