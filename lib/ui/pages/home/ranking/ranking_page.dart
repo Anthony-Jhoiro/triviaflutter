@@ -13,9 +13,9 @@ class RankingPage extends StatefulWidget {
 }
 
 class _RankingPageState extends State<RankingPage> {
-
-  var userRanking = List.generate(150,
-        (i) {
+  var userRanking = List.generate(
+    150,
+    (i) {
       var fakeUser = fakeUsers[i % fakeUsers.length];
 
       return new User(
@@ -33,7 +33,6 @@ class _RankingPageState extends State<RankingPage> {
       children: [
         Card(
           child: TextField(
-
             decoration: InputDecoration(
               icon: Icon(Icons.search),
               hintText: "Rechercher un utilisateur",

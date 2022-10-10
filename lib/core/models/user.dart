@@ -7,13 +7,12 @@ class User {
   User(this.firstname, this.lastname, this.profilePicture, this.score);
 }
 
-
 List<User> fakeUsers = List.of({
   new User(
-      "Lily",
-      "Aldrin",
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Alyson_Hannigan%2C_2013-07-20_%28cropped%29.jpg/142px-Alyson_Hannigan%2C_2013-07-20_%28cropped%29.jpg",
-      0,
+    "Lily",
+    "Aldrin",
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Alyson_Hannigan%2C_2013-07-20_%28cropped%29.jpg/142px-Alyson_Hannigan%2C_2013-07-20_%28cropped%29.jpg",
+    0,
   ),
   new User(
     "Barney",
