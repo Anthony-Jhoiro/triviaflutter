@@ -3,7 +3,9 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:triviaflutter/ui/pages/home/ranking/rank_card.dart';
 
-import '../../../../core/models/user.dart';
+import '../../../../common/models/user/fake_user.dart';
+import '../../../../common/models/user/user.dart';
+
 
 class RankingPage extends StatefulWidget {
   const RankingPage({Key? key}) : super(key: key);
@@ -19,10 +21,10 @@ class _RankingPageState extends State<RankingPage> {
       var fakeUser = fakeUsers[i % fakeUsers.length];
 
       return new User(
-        fakeUser.firstname,
-        fakeUser.lastname,
-        fakeUser.profilePicture,
-        pow(150 - i, 2).toInt(),
+        id: fakeUser.id,
+        pseudo: fakeUser.pseudo,
+        avatar: fakeUser.avatar,
+        score: pow(150 - i, 2).toInt(),
       );
     },
   );

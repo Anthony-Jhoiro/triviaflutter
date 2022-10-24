@@ -3,7 +3,8 @@ import 'package:triviaflutter/ui/common/user/profile_picture.dart';
 import 'package:triviaflutter/ui/pages/home/ranking/rank_rank.dart';
 import 'package:triviaflutter/ui/pages/home/ranking/rank_scrore.dart';
 
-import '../../../../core/models/user.dart';
+import '../../../../common/models/user/user.dart';
+
 
 class RankCard extends StatelessWidget {
   final User user;
@@ -24,11 +25,11 @@ class RankCard extends StatelessWidget {
             Expanded(
               child: Row(
                 children: [
-                  ProfilePicture(asset: user.profilePicture, size: 40),
+                  ProfilePicture(asset: user.avatar, size: 40),
                   SizedBox(
                     width: 8,
                   ),
-                  Text(user.firstname + " " + user.lastname),
+                  Text(user.pseudo),
                 ],
               ),
             ),

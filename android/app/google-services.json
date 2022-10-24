@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1056892562727",
+    "project_id": "triviaflutter",
+    "storage_bucket": "triviaflutter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1056892562727:android:e1b9fbb25acda1002a0d02",
+        "android_client_info": {
+          "package_name": "com.trivia.triviaflutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1056892562727-ji9to6vq07tmq40lf40rvln38gerlpbt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMuWSnuZ5TBTTd51lYQ94OmmEib4Or6AQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1056892562727-ji9to6vq07tmq40lf40rvln38gerlpbt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

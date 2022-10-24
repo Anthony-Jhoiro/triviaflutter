@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:triviaflutter/core/models/user.dart';
+import 'package:triviaflutter/common/models/user/fake_user.dart';
 import 'package:triviaflutter/ui/pages/home/profile/rounded_score.dart';
 
+import '../../../../common/models/user/user.dart';
 import '../../../common/button.dart';
 import '../../../common/user/profile_picture.dart';
 
@@ -13,12 +14,7 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
-  User user = new User(
-    "John",
-    "Doe",
-    "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80",
-    25,
-  );
+  User user = fakeUsers[0];
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +31,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   top: 25,
                   left: 25,
                   child: ProfilePicture(
-                    asset: user.profilePicture,
+                    asset: user.avatar,
                     size: 200,
                   ),
                 ),
@@ -50,7 +46,7 @@ class _ProfilePageState extends State<ProfilePage> {
             ),
           ),
           Text(
-            user.firstname + " " + user.lastname,
+            user.pseudo,
             style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
           ),
           Padding(

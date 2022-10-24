@@ -23,3 +23,5 @@ dart_code_metrics:
     - no-equal-then-else
   rules-exclude:
     - lib/ui/theme.dart
+    - lib/**/*.freezed.dart
+    - lib/**/*.g.dart

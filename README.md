@@ -2,15 +2,22 @@
 
 M2 Flutter project
 
-## Getting Started
+## Usefull commands
 
-This project is a starting point for a Flutter application.
+### Generate model with mason
+```bash
+mason make model --model_name MODEL_NAME --additionals "[copyWith, json, equatable]" --style freezed
+```
 
-A few resources to get you started if this is your first Flutter project:
+API : opentrivia database https://opentdb.com/
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+10 questions par user par jours
+le premier joueur qui se connecte tous les jours charge les questions et les stock dans firebase,
+les autres users récupèrent les questions depuis firebase et envoient les réponses à firebase
+
+chaque question a une difficulté qui correspondra à l'ajout de point de l'utilisateur
+
+les users recoivent les questions et les réponses en même temps
+
+
