@@ -20,4 +20,8 @@ chaque question a une difficulté qui correspondra à l'ajout de point de l'util
 
 les users recoivent les questions et les réponses en même temps
 
+---
 
+Pour la prochaine fois
+date comme id du document
+et ajouter la function pour récupérer les questions de l'api si elles sont pas dans firesotre, les ajouter à firestore et supprimer les autres dates
