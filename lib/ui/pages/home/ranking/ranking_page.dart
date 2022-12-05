@@ -6,7 +6,6 @@ import 'package:triviaflutter/ui/pages/home/ranking/rank_card.dart';
 import '../../../../common/models/user/fake_user.dart';
 import '../../../../common/models/user/user.dart';
 
-
 class RankingPage extends StatefulWidget {
   const RankingPage({Key? key}) : super(key: key);
 

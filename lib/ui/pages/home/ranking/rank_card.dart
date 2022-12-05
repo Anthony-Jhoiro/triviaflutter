@@ -5,7 +5,6 @@ import 'package:triviaflutter/ui/pages/home/ranking/rank_scrore.dart';
 
 import '../../../../common/models/user/user.dart';
 
-
 class RankCard extends StatelessWidget {
   final User user;
   final int rank;

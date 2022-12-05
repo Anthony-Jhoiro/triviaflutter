@@ -19,8 +19,7 @@ class QuestionFirebase {
                 print("bipidibou");
                 print(questionDocument);
                 var json = questionDocument.toJson();
-                
-                
+
                 print(json);
 
                 return json;
