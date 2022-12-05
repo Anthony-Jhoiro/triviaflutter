@@ -20,7 +20,7 @@ QuestionDocument _$QuestionDocumentFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$QuestionDocument {
-  List<Question> get questions => throw _privateConstructorUsedError;
+  List<Question> get results => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -33,7 +33,7 @@ abstract class $QuestionDocumentCopyWith<$Res> {
   factory $QuestionDocumentCopyWith(
           QuestionDocument value, $Res Function(QuestionDocument) then) =
       _$QuestionDocumentCopyWithImpl<$Res>;
-  $Res call({List<Question> questions});
+  $Res call({List<Question> results});
 }
 
 /// @nodoc
@@ -47,12 +47,12 @@ class _$QuestionDocumentCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? questions = freezed,
+    Object? results = freezed,
   }) {
     return _then(_value.copyWith(
-      questions: questions == freezed
-          ? _value.questions
-          : questions // ignore: cast_nullable_to_non_nullable
+      results: results == freezed
+          ? _value.results
+          : results // ignore: cast_nullable_to_non_nullable
               as List<Question>,
     ));
   }
@@ -65,7 +65,7 @@ abstract class _$$_QuestionDocumentCopyWith<$Res>
           _$_QuestionDocument value, $Res Function(_$_QuestionDocument) then) =
       __$$_QuestionDocumentCopyWithImpl<$Res>;
   @override
-  $Res call({List<Question> questions});
+  $Res call({List<Question> results});
 }
 
 /// @nodoc
@@ -81,12 +81,12 @@ class __$$_QuestionDocumentCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? questions = freezed,
+    Object? results = freezed,
   }) {
     return _then(_$_QuestionDocument(
-      questions: questions == freezed
-          ? _value._questions
-          : questions // ignore: cast_nullable_to_non_nullable
+      results: results == freezed
+          ? _value._results
+          : results // ignore: cast_nullable_to_non_nullable
               as List<Question>,
     ));
   }
@@ -95,22 +95,22 @@ class __$$_QuestionDocumentCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_QuestionDocument implements _QuestionDocument {
-  const _$_QuestionDocument({required final List<Question> questions})
-      : _questions = questions;
+  const _$_QuestionDocument({required final List<Question> results})
+      : _results = results;
 
   factory _$_QuestionDocument.fromJson(Map<String, dynamic> json) =>
       _$$_QuestionDocumentFromJson(json);
 
-  final List<Question> _questions;
+  final List<Question> _results;
   @override
-  List<Question> get questions {
+  List<Question> get results {
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_questions);
+    return EqualUnmodifiableListView(_results);
   }
 
   @override
   String toString() {
-    return 'QuestionDocument(questions: $questions)';
+    return 'QuestionDocument(results: $results)';
   }
 
   @override
@@ -118,14 +118,13 @@ class _$_QuestionDocument implements _QuestionDocument {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_QuestionDocument &&
-            const DeepCollectionEquality()
-                .equals(other._questions, _questions));
+            const DeepCollectionEquality().equals(other._results, _results));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_questions));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_results));
 
   @JsonKey(ignore: true)
   @override
@@ -141,14 +140,14 @@ class _$_QuestionDocument implements _QuestionDocument {
 }
 
 abstract class _QuestionDocument implements QuestionDocument {
-  const factory _QuestionDocument({required final List<Question> questions}) =
+  const factory _QuestionDocument({required final List<Question> results}) =
       _$_QuestionDocument;
 
   factory _QuestionDocument.fromJson(Map<String, dynamic> json) =
       _$_QuestionDocument.fromJson;
 
   @override
-  List<Question> get questions;
+  List<Question> get results;
   @override
   @JsonKey(ignore: true)
   _$$_QuestionDocumentCopyWith<_$_QuestionDocument> get copyWith =>

@@ -2,7 +2,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../question/question.dart';
 
-
 part 'question_document.freezed.dart';
 part 'question_document.g.dart';
 
@@ -13,9 +12,10 @@ part 'question_document.g.dart';
 class QuestionDocument with _$QuestionDocument {
   /// {@macro question_document}
   const factory QuestionDocument({
-    required List<Question> questions,
+    required List<Question> results,
   }) = _QuestionDocument;
 
-    /// Creates a QuestionDocument from Json map
-  factory QuestionDocument.fromJson(Map<String, dynamic> data) => _$QuestionDocumentFromJson(data);
+  /// Creates a QuestionDocument from Json map
+  factory QuestionDocument.fromJson(Map<String, dynamic> data) =>
+      _$QuestionDocumentFromJson(data);
 }
