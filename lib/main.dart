@@ -2,7 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:json_theme/src/codec/theme_decoder.dart';
 import 'package:triviaflutter/services/auth/auth.dart';
-import 'package:triviaflutter/ui/pages/home/home_page.dart';
+import 'package:triviaflutter/ui/pages/signup/signup_page.dart';
 import 'package:triviaflutter/ui/theme.dart';
 
 import 'firebase_options.dart';
@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeDecoder.decodeThemeData(theme),
-      home: const HomePage(),
+      home: const SignupPage(),
     );
   }
 }

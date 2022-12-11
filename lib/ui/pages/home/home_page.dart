@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:triviaflutter/ui/common/background.dart';
 import 'package:triviaflutter/ui/pages/home/game/game_page.dart';
 import 'package:triviaflutter/ui/pages/home/profile/profile_page.dart';
 import 'package:triviaflutter/ui/pages/home/ranking/ranking_page.dart';
@@ -24,13 +25,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(title: const Text('Home')),
       body: Center(
-        child: Container(
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("lib/assets/bg-tile.png"),
-              fit: BoxFit.cover,
-            ),
-          ),
+        child: CustomBackground(
           child: IndexedStack(
             index: _currentIndex,
             children: _content,
