@@ -42,12 +42,17 @@ class _SignupPageState extends State<SignupPage> {
             userRepository: RepositoryProvider.of<UserRepository>(context),
           );
 
-          return signupCubit!;
+          return signupCubit!..redirectIfLoggedIn(context);
         },
         child: BlocConsumer<SignupCubit, SignupState>(
           listener: (context, state) {},
           builder: (context, state) {
             // Loading states
+            if (state is Initial) {
+              return SignupLoadingScreen(
+                message: "Récupération de vos informations...",
+              );
+            }
             if (state is PhoneNumberSubmitted) {
               return SignupLoadingScreen(
                 message: "Envoie du SMS de validation...",

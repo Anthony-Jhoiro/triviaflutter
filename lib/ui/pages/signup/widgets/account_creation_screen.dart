@@ -46,7 +46,7 @@ class _AccountCreationScreenState extends State<AccountCreationScreen> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          widget.signupCubit.createAccount(pseudoController.text);
+          widget.signupCubit.createAccount(context, pseudoController.text);
         },
         backgroundColor: Theme.of(context).primaryColor,
         child: Icon(Icons.chevron_right),

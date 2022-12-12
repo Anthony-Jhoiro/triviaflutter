@@ -18,6 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$SignupState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() initial,
     required TResult Function() phoneNumberForm,
     required TResult Function() phoneNumberSubmitted,
     required TResult Function(String message) phoneNumberSubmitionError,
@@ -32,6 +33,7 @@ mixin _$SignupState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
     TResult Function()? phoneNumberForm,
     TResult Function()? phoneNumberSubmitted,
     TResult Function(String message)? phoneNumberSubmitionError,
@@ -46,6 +48,7 @@ mixin _$SignupState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
     TResult Function()? phoneNumberForm,
     TResult Function()? phoneNumberSubmitted,
     TResult Function(String message)? phoneNumberSubmitionError,
@@ -61,6 +64,7 @@ mixin _$SignupState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
     required TResult Function(PhoneNumberForm value) phoneNumberForm,
     required TResult Function(PhoneNumberSubmitted value) phoneNumberSubmitted,
     required TResult Function(PhoneNumberSubmitionError value)
@@ -77,6 +81,7 @@ mixin _$SignupState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
     TResult Function(PhoneNumberForm value)? phoneNumberForm,
     TResult Function(PhoneNumberSubmitted value)? phoneNumberSubmitted,
     TResult Function(PhoneNumberSubmitionError value)?
@@ -93,6 +98,7 @@ mixin _$SignupState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
     TResult Function(PhoneNumberForm value)? phoneNumberForm,
     TResult Function(PhoneNumberSubmitted value)? phoneNumberSubmitted,
     TResult Function(PhoneNumberSubmitionError value)?
@@ -124,6 +130,168 @@ class _$SignupStateCopyWithImpl<$Res> implements $SignupStateCopyWith<$Res> {
   final SignupState _value;
   // ignore: unused_field
   final $Res Function(SignupState) _then;
+}
+
+/// @nodoc
+abstract class _$$InitialCopyWith<$Res> {
+  factory _$$InitialCopyWith(_$Initial value, $Res Function(_$Initial) then) =
+      __$$InitialCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$InitialCopyWithImpl<$Res> extends _$SignupStateCopyWithImpl<$Res>
+    implements _$$InitialCopyWith<$Res> {
+  __$$InitialCopyWithImpl(_$Initial _value, $Res Function(_$Initial) _then)
+      : super(_value, (v) => _then(v as _$Initial));
+
+  @override
+  _$Initial get _value => super._value as _$Initial;
+}
+
+/// @nodoc
+
+class _$Initial implements Initial {
+  const _$Initial();
+
+  @override
+  String toString() {
+    return 'SignupState.initial()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$Initial);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() phoneNumberForm,
+    required TResult Function() phoneNumberSubmitted,
+    required TResult Function(String message) phoneNumberSubmitionError,
+    required TResult Function(String code) phoneNumberVerificationCodeSent,
+    required TResult Function() accountFetching,
+    required TResult Function(String message) accountFetchingError,
+    required TResult Function() accountCreation,
+    required TResult Function() accountCreating,
+    required TResult Function(String message) accountCreationError,
+    required TResult Function() loggedIn,
+  }) {
+    return initial();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? phoneNumberForm,
+    TResult Function()? phoneNumberSubmitted,
+    TResult Function(String message)? phoneNumberSubmitionError,
+    TResult Function(String code)? phoneNumberVerificationCodeSent,
+    TResult Function()? accountFetching,
+    TResult Function(String message)? accountFetchingError,
+    TResult Function()? accountCreation,
+    TResult Function()? accountCreating,
+    TResult Function(String message)? accountCreationError,
+    TResult Function()? loggedIn,
+  }) {
+    return initial?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? phoneNumberForm,
+    TResult Function()? phoneNumberSubmitted,
+    TResult Function(String message)? phoneNumberSubmitionError,
+    TResult Function(String code)? phoneNumberVerificationCodeSent,
+    TResult Function()? accountFetching,
+    TResult Function(String message)? accountFetchingError,
+    TResult Function()? accountCreation,
+    TResult Function()? accountCreating,
+    TResult Function(String message)? accountCreationError,
+    TResult Function()? loggedIn,
+    required TResult orElse(),
+  }) {
+    if (initial != null) {
+      return initial();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
+    required TResult Function(PhoneNumberForm value) phoneNumberForm,
+    required TResult Function(PhoneNumberSubmitted value) phoneNumberSubmitted,
+    required TResult Function(PhoneNumberSubmitionError value)
+        phoneNumberSubmitionError,
+    required TResult Function(PhoneNumberVerificationCodeSent value)
+        phoneNumberVerificationCodeSent,
+    required TResult Function(AccountFetching value) accountFetching,
+    required TResult Function(AccountFetchingError value) accountFetchingError,
+    required TResult Function(AccountCreation value) accountCreation,
+    required TResult Function(AccountCreating value) accountCreating,
+    required TResult Function(AccountCreationError value) accountCreationError,
+    required TResult Function(LoggedIn value) loggedIn,
+  }) {
+    return initial(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(PhoneNumberForm value)? phoneNumberForm,
+    TResult Function(PhoneNumberSubmitted value)? phoneNumberSubmitted,
+    TResult Function(PhoneNumberSubmitionError value)?
+        phoneNumberSubmitionError,
+    TResult Function(PhoneNumberVerificationCodeSent value)?
+        phoneNumberVerificationCodeSent,
+    TResult Function(AccountFetching value)? accountFetching,
+    TResult Function(AccountFetchingError value)? accountFetchingError,
+    TResult Function(AccountCreation value)? accountCreation,
+    TResult Function(AccountCreating value)? accountCreating,
+    TResult Function(AccountCreationError value)? accountCreationError,
+    TResult Function(LoggedIn value)? loggedIn,
+  }) {
+    return initial?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(PhoneNumberForm value)? phoneNumberForm,
+    TResult Function(PhoneNumberSubmitted value)? phoneNumberSubmitted,
+    TResult Function(PhoneNumberSubmitionError value)?
+        phoneNumberSubmitionError,
+    TResult Function(PhoneNumberVerificationCodeSent value)?
+        phoneNumberVerificationCodeSent,
+    TResult Function(AccountFetching value)? accountFetching,
+    TResult Function(AccountFetchingError value)? accountFetchingError,
+    TResult Function(AccountCreation value)? accountCreation,
+    TResult Function(AccountCreating value)? accountCreating,
+    TResult Function(AccountCreationError value)? accountCreationError,
+    TResult Function(LoggedIn value)? loggedIn,
+    required TResult orElse(),
+  }) {
+    if (initial != null) {
+      return initial(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class Initial implements SignupState {
+  const factory Initial() = _$Initial;
 }
 
 /// @nodoc
@@ -167,6 +335,7 @@ class _$PhoneNumberForm implements PhoneNumberForm {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() initial,
     required TResult Function() phoneNumberForm,
     required TResult Function() phoneNumberSubmitted,
     required TResult Function(String message) phoneNumberSubmitionError,
@@ -184,6 +353,7 @@ class _$PhoneNumberForm implements PhoneNumberForm {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
     TResult Function()? phoneNumberForm,
     TResult Function()? phoneNumberSubmitted,
     TResult Function(String message)? phoneNumberSubmitionError,
@@ -201,6 +371,7 @@ class _$PhoneNumberForm implements PhoneNumberForm {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
     TResult Function()? phoneNumberForm,
     TResult Function()? phoneNumberSubmitted,
     TResult Function(String message)? phoneNumberSubmitionError,
@@ -222,6 +393,7 @@ class _$PhoneNumberForm implements PhoneNumberForm {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
     required TResult Function(PhoneNumberForm value) phoneNumberForm,
     required TResult Function(PhoneNumberSubmitted value) phoneNumberSubmitted,
     required TResult Function(PhoneNumberSubmitionError value)
@@ -241,6 +413,7 @@ class _$PhoneNumberForm implements PhoneNumberForm {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
     TResult Function(PhoneNumberForm value)? phoneNumberForm,
     TResult Function(PhoneNumberSubmitted value)? phoneNumberSubmitted,
     TResult Function(PhoneNumberSubmitionError value)?
@@ -260,6 +433,7 @@ class _$PhoneNumberForm implements PhoneNumberForm {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
     TResult Function(PhoneNumberForm value)? phoneNumberForm,
     TResult Function(PhoneNumberSubmitted value)? phoneNumberSubmitted,
     TResult Function(PhoneNumberSubmitionError value)?
@@ -326,6 +500,7 @@ class _$PhoneNumberSubmitted implements PhoneNumberSubmitted {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() initial,
     required TResult Function() phoneNumberForm,
     required TResult Function() phoneNumberSubmitted,
     required TResult Function(String message) phoneNumberSubmitionError,
@@ -343,6 +518,7 @@ class _$PhoneNumberSubmitted implements PhoneNumberSubmitted {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
     TResult Function()? phoneNumberForm,
     TResult Function()? phoneNumberSubmitted,
     TResult Function(String message)? phoneNumberSubmitionError,
@@ -360,6 +536,7 @@ class _$PhoneNumberSubmitted implements PhoneNumberSubmitted {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
     TResult Function()? phoneNumberForm,
     TResult Function()? phoneNumberSubmitted,
     TResult Function(String message)? phoneNumberSubmitionError,
@@ -381,6 +558,7 @@ class _$PhoneNumberSubmitted implements PhoneNumberSubmitted {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
     required TResult Function(PhoneNumberForm value) phoneNumberForm,
     required TResult Function(PhoneNumberSubmitted value) phoneNumberSubmitted,
     required TResult Function(PhoneNumberSubmitionError value)
@@ -400,6 +578,7 @@ class _$PhoneNumberSubmitted implements PhoneNumberSubmitted {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
     TResult Function(PhoneNumberForm value)? phoneNumberForm,
     TResult Function(PhoneNumberSubmitted value)? phoneNumberSubmitted,
     TResult Function(PhoneNumberSubmitionError value)?
@@ -419,6 +598,7 @@ class _$PhoneNumberSubmitted implements PhoneNumberSubmitted {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
     TResult Function(PhoneNumberForm value)? phoneNumberForm,
     TResult Function(PhoneNumberSubmitted value)? phoneNumberSubmitted,
     TResult Function(PhoneNumberSubmitionError value)?
@@ -512,6 +692,7 @@ class _$PhoneNumberSubmitionError implements PhoneNumberSubmitionError {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() initial,
     required TResult Function() phoneNumberForm,
     required TResult Function() phoneNumberSubmitted,
     required TResult Function(String message) phoneNumberSubmitionError,
@@ -529,6 +710,7 @@ class _$PhoneNumberSubmitionError implements PhoneNumberSubmitionError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
     TResult Function()? phoneNumberForm,
     TResult Function()? phoneNumberSubmitted,
     TResult Function(String message)? phoneNumberSubmitionError,
@@ -546,6 +728,7 @@ class _$PhoneNumberSubmitionError implements PhoneNumberSubmitionError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
     TResult Function()? phoneNumberForm,
     TResult Function()? phoneNumberSubmitted,
     TResult Function(String message)? phoneNumberSubmitionError,
@@ -567,6 +750,7 @@ class _$PhoneNumberSubmitionError implements PhoneNumberSubmitionError {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
     required TResult Function(PhoneNumberForm value) phoneNumberForm,
     required TResult Function(PhoneNumberSubmitted value) phoneNumberSubmitted,
     required TResult Function(PhoneNumberSubmitionError value)
@@ -586,6 +770,7 @@ class _$PhoneNumberSubmitionError implements PhoneNumberSubmitionError {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
     TResult Function(PhoneNumberForm value)? phoneNumberForm,
     TResult Function(PhoneNumberSubmitted value)? phoneNumberSubmitted,
     TResult Function(PhoneNumberSubmitionError value)?
@@ -605,6 +790,7 @@ class _$PhoneNumberSubmitionError implements PhoneNumberSubmitionError {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
     TResult Function(PhoneNumberForm value)? phoneNumberForm,
     TResult Function(PhoneNumberSubmitted value)? phoneNumberSubmitted,
     TResult Function(PhoneNumberSubmitionError value)?
@@ -706,6 +892,7 @@ class _$PhoneNumberVerificationCodeSent
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() initial,
     required TResult Function() phoneNumberForm,
     required TResult Function() phoneNumberSubmitted,
     required TResult Function(String message) phoneNumberSubmitionError,
@@ -723,6 +910,7 @@ class _$PhoneNumberVerificationCodeSent
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
     TResult Function()? phoneNumberForm,
     TResult Function()? phoneNumberSubmitted,
     TResult Function(String message)? phoneNumberSubmitionError,
@@ -740,6 +928,7 @@ class _$PhoneNumberVerificationCodeSent
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
     TResult Function()? phoneNumberForm,
     TResult Function()? phoneNumberSubmitted,
     TResult Function(String message)? phoneNumberSubmitionError,
@@ -761,6 +950,7 @@ class _$PhoneNumberVerificationCodeSent
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
     required TResult Function(PhoneNumberForm value) phoneNumberForm,
     required TResult Function(PhoneNumberSubmitted value) phoneNumberSubmitted,
     required TResult Function(PhoneNumberSubmitionError value)
@@ -780,6 +970,7 @@ class _$PhoneNumberVerificationCodeSent
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
     TResult Function(PhoneNumberForm value)? phoneNumberForm,
     TResult Function(PhoneNumberSubmitted value)? phoneNumberSubmitted,
     TResult Function(PhoneNumberSubmitionError value)?
@@ -799,6 +990,7 @@ class _$PhoneNumberVerificationCodeSent
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
     TResult Function(PhoneNumberForm value)? phoneNumberForm,
     TResult Function(PhoneNumberSubmitted value)? phoneNumberSubmitted,
     TResult Function(PhoneNumberSubmitionError value)?
@@ -871,6 +1063,7 @@ class _$AccountFetching implements AccountFetching {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() initial,
     required TResult Function() phoneNumberForm,
     required TResult Function() phoneNumberSubmitted,
     required TResult Function(String message) phoneNumberSubmitionError,
@@ -888,6 +1081,7 @@ class _$AccountFetching implements AccountFetching {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
     TResult Function()? phoneNumberForm,
     TResult Function()? phoneNumberSubmitted,
     TResult Function(String message)? phoneNumberSubmitionError,
@@ -905,6 +1099,7 @@ class _$AccountFetching implements AccountFetching {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
     TResult Function()? phoneNumberForm,
     TResult Function()? phoneNumberSubmitted,
     TResult Function(String message)? phoneNumberSubmitionError,
@@ -926,6 +1121,7 @@ class _$AccountFetching implements AccountFetching {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
     required TResult Function(PhoneNumberForm value) phoneNumberForm,
     required TResult Function(PhoneNumberSubmitted value) phoneNumberSubmitted,
     required TResult Function(PhoneNumberSubmitionError value)
@@ -945,6 +1141,7 @@ class _$AccountFetching implements AccountFetching {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
     TResult Function(PhoneNumberForm value)? phoneNumberForm,
     TResult Function(PhoneNumberSubmitted value)? phoneNumberSubmitted,
     TResult Function(PhoneNumberSubmitionError value)?
@@ -964,6 +1161,7 @@ class _$AccountFetching implements AccountFetching {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
     TResult Function(PhoneNumberForm value)? phoneNumberForm,
     TResult Function(PhoneNumberSubmitted value)? phoneNumberSubmitted,
     TResult Function(PhoneNumberSubmitionError value)?
@@ -1055,6 +1253,7 @@ class _$AccountFetchingError implements AccountFetchingError {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() initial,
     required TResult Function() phoneNumberForm,
     required TResult Function() phoneNumberSubmitted,
     required TResult Function(String message) phoneNumberSubmitionError,
@@ -1072,6 +1271,7 @@ class _$AccountFetchingError implements AccountFetchingError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
     TResult Function()? phoneNumberForm,
     TResult Function()? phoneNumberSubmitted,
     TResult Function(String message)? phoneNumberSubmitionError,
@@ -1089,6 +1289,7 @@ class _$AccountFetchingError implements AccountFetchingError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
     TResult Function()? phoneNumberForm,
     TResult Function()? phoneNumberSubmitted,
     TResult Function(String message)? phoneNumberSubmitionError,
@@ -1110,6 +1311,7 @@ class _$AccountFetchingError implements AccountFetchingError {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
     required TResult Function(PhoneNumberForm value) phoneNumberForm,
     required TResult Function(PhoneNumberSubmitted value) phoneNumberSubmitted,
     required TResult Function(PhoneNumberSubmitionError value)
@@ -1129,6 +1331,7 @@ class _$AccountFetchingError implements AccountFetchingError {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
     TResult Function(PhoneNumberForm value)? phoneNumberForm,
     TResult Function(PhoneNumberSubmitted value)? phoneNumberSubmitted,
     TResult Function(PhoneNumberSubmitionError value)?
@@ -1148,6 +1351,7 @@ class _$AccountFetchingError implements AccountFetchingError {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
     TResult Function(PhoneNumberForm value)? phoneNumberForm,
     TResult Function(PhoneNumberSubmitted value)? phoneNumberSubmitted,
     TResult Function(PhoneNumberSubmitionError value)?
@@ -1220,6 +1424,7 @@ class _$AccountCreation implements AccountCreation {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() initial,
     required TResult Function() phoneNumberForm,
     required TResult Function() phoneNumberSubmitted,
     required TResult Function(String message) phoneNumberSubmitionError,
@@ -1237,6 +1442,7 @@ class _$AccountCreation implements AccountCreation {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
     TResult Function()? phoneNumberForm,
     TResult Function()? phoneNumberSubmitted,
     TResult Function(String message)? phoneNumberSubmitionError,
@@ -1254,6 +1460,7 @@ class _$AccountCreation implements AccountCreation {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
     TResult Function()? phoneNumberForm,
     TResult Function()? phoneNumberSubmitted,
     TResult Function(String message)? phoneNumberSubmitionError,
@@ -1275,6 +1482,7 @@ class _$AccountCreation implements AccountCreation {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
     required TResult Function(PhoneNumberForm value) phoneNumberForm,
     required TResult Function(PhoneNumberSubmitted value) phoneNumberSubmitted,
     required TResult Function(PhoneNumberSubmitionError value)
@@ -1294,6 +1502,7 @@ class _$AccountCreation implements AccountCreation {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
     TResult Function(PhoneNumberForm value)? phoneNumberForm,
     TResult Function(PhoneNumberSubmitted value)? phoneNumberSubmitted,
     TResult Function(PhoneNumberSubmitionError value)?
@@ -1313,6 +1522,7 @@ class _$AccountCreation implements AccountCreation {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
     TResult Function(PhoneNumberForm value)? phoneNumberForm,
     TResult Function(PhoneNumberSubmitted value)? phoneNumberSubmitted,
     TResult Function(PhoneNumberSubmitionError value)?
@@ -1379,6 +1589,7 @@ class _$AccountCreating implements AccountCreating {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() initial,
     required TResult Function() phoneNumberForm,
     required TResult Function() phoneNumberSubmitted,
     required TResult Function(String message) phoneNumberSubmitionError,
@@ -1396,6 +1607,7 @@ class _$AccountCreating implements AccountCreating {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
     TResult Function()? phoneNumberForm,
     TResult Function()? phoneNumberSubmitted,
     TResult Function(String message)? phoneNumberSubmitionError,
@@ -1413,6 +1625,7 @@ class _$AccountCreating implements AccountCreating {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
     TResult Function()? phoneNumberForm,
     TResult Function()? phoneNumberSubmitted,
     TResult Function(String message)? phoneNumberSubmitionError,
@@ -1434,6 +1647,7 @@ class _$AccountCreating implements AccountCreating {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
     required TResult Function(PhoneNumberForm value) phoneNumberForm,
     required TResult Function(PhoneNumberSubmitted value) phoneNumberSubmitted,
     required TResult Function(PhoneNumberSubmitionError value)
@@ -1453,6 +1667,7 @@ class _$AccountCreating implements AccountCreating {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
     TResult Function(PhoneNumberForm value)? phoneNumberForm,
     TResult Function(PhoneNumberSubmitted value)? phoneNumberSubmitted,
     TResult Function(PhoneNumberSubmitionError value)?
@@ -1472,6 +1687,7 @@ class _$AccountCreating implements AccountCreating {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
     TResult Function(PhoneNumberForm value)? phoneNumberForm,
     TResult Function(PhoneNumberSubmitted value)? phoneNumberSubmitted,
     TResult Function(PhoneNumberSubmitionError value)?
@@ -1563,6 +1779,7 @@ class _$AccountCreationError implements AccountCreationError {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() initial,
     required TResult Function() phoneNumberForm,
     required TResult Function() phoneNumberSubmitted,
     required TResult Function(String message) phoneNumberSubmitionError,
@@ -1580,6 +1797,7 @@ class _$AccountCreationError implements AccountCreationError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
     TResult Function()? phoneNumberForm,
     TResult Function()? phoneNumberSubmitted,
     TResult Function(String message)? phoneNumberSubmitionError,
@@ -1597,6 +1815,7 @@ class _$AccountCreationError implements AccountCreationError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
     TResult Function()? phoneNumberForm,
     TResult Function()? phoneNumberSubmitted,
     TResult Function(String message)? phoneNumberSubmitionError,
@@ -1618,6 +1837,7 @@ class _$AccountCreationError implements AccountCreationError {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
     required TResult Function(PhoneNumberForm value) phoneNumberForm,
     required TResult Function(PhoneNumberSubmitted value) phoneNumberSubmitted,
     required TResult Function(PhoneNumberSubmitionError value)
@@ -1637,6 +1857,7 @@ class _$AccountCreationError implements AccountCreationError {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
     TResult Function(PhoneNumberForm value)? phoneNumberForm,
     TResult Function(PhoneNumberSubmitted value)? phoneNumberSubmitted,
     TResult Function(PhoneNumberSubmitionError value)?
@@ -1656,6 +1877,7 @@ class _$AccountCreationError implements AccountCreationError {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
     TResult Function(PhoneNumberForm value)? phoneNumberForm,
     TResult Function(PhoneNumberSubmitted value)? phoneNumberSubmitted,
     TResult Function(PhoneNumberSubmitionError value)?
@@ -1726,6 +1948,7 @@ class _$LoggedIn implements LoggedIn {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() initial,
     required TResult Function() phoneNumberForm,
     required TResult Function() phoneNumberSubmitted,
     required TResult Function(String message) phoneNumberSubmitionError,
@@ -1743,6 +1966,7 @@ class _$LoggedIn implements LoggedIn {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
     TResult Function()? phoneNumberForm,
     TResult Function()? phoneNumberSubmitted,
     TResult Function(String message)? phoneNumberSubmitionError,
@@ -1760,6 +1984,7 @@ class _$LoggedIn implements LoggedIn {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
     TResult Function()? phoneNumberForm,
     TResult Function()? phoneNumberSubmitted,
     TResult Function(String message)? phoneNumberSubmitionError,
@@ -1781,6 +2006,7 @@ class _$LoggedIn implements LoggedIn {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
     required TResult Function(PhoneNumberForm value) phoneNumberForm,
     required TResult Function(PhoneNumberSubmitted value) phoneNumberSubmitted,
     required TResult Function(PhoneNumberSubmitionError value)
@@ -1800,6 +2026,7 @@ class _$LoggedIn implements LoggedIn {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
     TResult Function(PhoneNumberForm value)? phoneNumberForm,
     TResult Function(PhoneNumberSubmitted value)? phoneNumberSubmitted,
     TResult Function(PhoneNumberSubmitionError value)?
@@ -1819,6 +2046,7 @@ class _$LoggedIn implements LoggedIn {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
     TResult Function(PhoneNumberForm value)? phoneNumberForm,
     TResult Function(PhoneNumberSubmitted value)? phoneNumberSubmitted,
     TResult Function(PhoneNumberSubmitionError value)?

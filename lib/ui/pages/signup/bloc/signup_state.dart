@@ -3,6 +3,7 @@ part of 'signup_cubit.dart';
 
 @freezed
 class SignupState {
+  const factory SignupState.initial() = Initial;
   const factory SignupState.phoneNumberForm() = PhoneNumberForm;
   const factory SignupState.phoneNumberSubmitted() = PhoneNumberSubmitted;
   const factory SignupState.phoneNumberSubmitionError(String message) = PhoneNumberSubmitionError;
@@ -16,7 +17,7 @@ class SignupState {
 }
 
 bool isLoadingState(SignupState state) {
-  return state is PhoneNumberSubmitted || state is AccountFetching || state is AccountCreating;
+  return state is PhoneNumberSubmitted || state is AccountFetching || state is AccountCreating || state is Initial;
 }
 
 bool isErrorState(SignupState state) {

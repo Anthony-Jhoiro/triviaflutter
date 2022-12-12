@@ -2,10 +2,10 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:json_theme/src/codec/theme_decoder.dart';
 import 'package:triviaflutter/services/auth/auth.dart';
-import 'package:triviaflutter/ui/pages/signup/signup_page.dart';
 import 'package:triviaflutter/ui/theme.dart';
 
 import 'firebase_options.dart';
+import 'main_router.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,10 +23,13 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       title: 'Flutter Demo',
       theme: ThemeDecoder.decodeThemeData(theme),
-      home: const SignupPage(),
+      routeInformationProvider: mainRouter.routeInformationProvider,
+      routeInformationParser: mainRouter.routeInformationParser,
+      routerDelegate: mainRouter.routerDelegate,
+      backButtonDispatcher: mainRouter.backButtonDispatcher,
     );
   }
 }

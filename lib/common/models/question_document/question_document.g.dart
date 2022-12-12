@@ -15,5 +15,5 @@ _$_QuestionDocument _$$_QuestionDocumentFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$_QuestionDocumentToJson(_$_QuestionDocument instance) =>
     <String, dynamic>{
-      'results': instance.results,
+      'results': instance.results.map((e) => e.toJson()).toList(),
     };

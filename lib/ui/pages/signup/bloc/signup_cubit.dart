@@ -1,6 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:go_router/go_router.dart';
 import 'package:triviaflutter/common/models/user/user.dart' as triviauser;
 import 'package:triviaflutter/common/repository/auth_repository.dart';
 import 'package:triviaflutter/common/repository/user_repository.dart';
@@ -18,7 +20,18 @@ class SignupCubit extends Cubit<SignupState> {
   SignupCubit({
     required this.authRepository,
     required this.userRepository,
-  }) : super(SignupState.phoneNumberForm());
+  }) : super(SignupState.initial());
+
+  redirectIfLoggedIn(BuildContext context) async {
+    var firebaseCurrentUser = FirebaseAuth.instance.currentUser;
+    if (firebaseCurrentUser == null) {
+      return;
+    }
+    final applicationUser = await userRepository.findUserById(firebaseCurrentUser.uid);
+    if (applicationUser != null) {
+      context.goNamed("home");
+    }
+  }
 
   validatePhoneNumber(String phoneNumber) async {
     emit(SignupState.phoneNumberSubmitted());
@@ -59,7 +72,7 @@ class SignupCubit extends Cubit<SignupState> {
     }
   }
 
-  createAccount(String username) async {
+  createAccount(BuildContext context, String username) async {
     emit(SignupState.accountCreating());
     try {
       await userRepository.createUser(
@@ -72,6 +85,7 @@ class SignupCubit extends Cubit<SignupState> {
         ),
       );
       emit(SignupState.loggedIn());
+      context.goNamed("home");
     } catch (err) {
       print(err);
       emit(SignupState.accountCreationError(
