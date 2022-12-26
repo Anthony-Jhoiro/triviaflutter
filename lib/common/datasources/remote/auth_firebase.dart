@@ -40,4 +40,12 @@ class AuthFirebase {
     PhoneAuthCredential credential = PhoneAuthProvider.credential(verificationId: verificationId, smsCode: smsCode);
     await FirebaseAuth.instance.signInWithCredential(credential);
   }
+
+  Future<void> logout() async {
+    await FirebaseAuth.instance.signOut();
+  }
+
+  String? getCurrentUserId() {
+    return FirebaseAuth.instance.currentUser?.uid;
+  }
 }

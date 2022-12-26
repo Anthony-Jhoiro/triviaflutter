@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../common/models/user/user.dart';
+
 class MeepleClipper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
@@ -86,47 +88,53 @@ class MeepleClipper extends CustomClipper<Path> {
       size.height * 0.8047995,
     );
     path_0.cubicTo(
-        size.width * 0.5246733,
-        size.height * 0.8047897,
-        size.width * 0.5700217,
-        size.height * 0.8974078,
-        size.width * 0.6075617,
-        size.height * 0.9550245);
+      size.width * 0.5246733,
+      size.height * 0.8047897,
+      size.width * 0.5700217,
+      size.height * 0.8974078,
+      size.width * 0.6075617,
+      size.height * 0.9550245,
+    );
     path_0.cubicTo(
-        size.width * 0.6245217,
-        size.height * 0.9810628,
-        size.width * 0.6362008,
-        size.height * 0.9999428,
-        size.width * 0.6690717,
-        size.height * 0.9999428);
+      size.width * 0.6245217,
+      size.height * 0.9810628,
+      size.width * 0.6362008,
+      size.height * 0.9999428,
+      size.width * 0.6690717,
+      size.height * 0.9999428,
+    );
     path_0.cubicTo(
-        size.width * 0.7418225,
-        size.height * 0.9999428,
-        size.width * 0.8208383,
-        size.height * 0.9999917,
-        size.width * 0.9036050,
-        size.height * 0.9999917);
+      size.width * 0.7418225,
+      size.height * 0.9999428,
+      size.width * 0.8208383,
+      size.height * 0.9999917,
+      size.width * 0.9036050,
+      size.height * 0.9999917,
+    );
     path_0.cubicTo(
-        size.width * 0.9492367,
-        size.height * 0.9999917,
-        size.width * 0.9624458,
-        size.height * 0.9908800,
-        size.width * 0.9556750,
-        size.height * 0.9439308);
+      size.width * 0.9492367,
+      size.height * 0.9999917,
+      size.width * 0.9624458,
+      size.height * 0.9908800,
+      size.width * 0.9556750,
+      size.height * 0.9439308,
+    );
     path_0.cubicTo(
-        size.width * 0.9349458,
-        size.height * 0.7998808,
-        size.width * 0.7495667,
-        size.height * 0.5730308,
-        size.width * 0.7821500,
-        size.height * 0.5375892);
+      size.width * 0.9349458,
+      size.height * 0.7998808,
+      size.width * 0.7495667,
+      size.height * 0.5730308,
+      size.width * 0.7821500,
+      size.height * 0.5375892,
+    );
     path_0.cubicTo(
-        size.width * 0.8194192,
-        size.height * 0.4971108,
-        size.width * 0.9941917,
-        size.height * 0.5677717,
-        size.width * 0.9999333,
-        size.height * 0.4301892);
+      size.width * 0.8194192,
+      size.height * 0.4971108,
+      size.width * 0.9941917,
+      size.height * 0.5677717,
+      size.width * 0.9999333,
+      size.height * 0.4301892,
+    );
     path_0.close();
 
     return path_0;
@@ -137,26 +145,28 @@ class MeepleClipper extends CustomClipper<Path> {
 }
 
 class ProfilePicture extends StatelessWidget {
-  final String asset;
+  final User user;
   final double size;
 
-  const ProfilePicture({Key? key, required this.asset, required this.size})
+  const ProfilePicture({Key? key, required this.user, required this.size})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return //Add this CustomPaint widget to the Widget Tree
-        ClipPath(
-            clipper: MeepleClipper(),
-            child: SizedBox(
-              width: size,
-              height: size,
-              child: ColoredBox(
-                color: Colors.black,
-                child: Image.network(
-                  asset,
-                ),
-              ),
-            ));
+    final imageUrl = Uri.parse(user.avatar).isAbsolute
+        ? user.avatar
+        : 'https://avatars.dicebear.com/api/pixel-art/${user.id}.png';
+
+    return ClipPath(
+      clipper: MeepleClipper(),
+      child: SizedBox(
+        width: size,
+        height: size,
+        child: ColoredBox(
+          color: Colors.black,
+          child: Image.network(imageUrl),
+        ),
+      ),
+    );
   }
 }

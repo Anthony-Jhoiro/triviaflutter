@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 import 'package:triviaflutter/common/repository/auth_repository.dart';
 import 'package:triviaflutter/ui/pages/signup/bloc/signup_cubit.dart';
@@ -45,7 +46,11 @@ class _SignupPageState extends State<SignupPage> {
           return signupCubit!..redirectIfLoggedIn(context);
         },
         child: BlocConsumer<SignupCubit, SignupState>(
-          listener: (context, state) {},
+          listener: (context, state) {
+            if (state is LoggedIn) {
+              context.goNamed("home");
+            }
+          },
           builder: (context, state) {
             // Loading states
             if (state is Initial) {

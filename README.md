@@ -39,3 +39,8 @@ flutter pub run build_runner build
 ```
 
 Et avec un peu de bol ça marche
+
+difficultés :
+- easy : 1
+- medium : 3
+- hard : 5

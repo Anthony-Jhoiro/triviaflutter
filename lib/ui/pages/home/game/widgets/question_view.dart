@@ -26,14 +26,15 @@ class QuestionView extends StatefulWidget {
 class _QuestionViewState extends State<QuestionView> {
   @override
   Widget build(BuildContext context) {
+
     return Column(
       children: [
         Expanded(
           child: Center(
             child: Padding(
-              padding: EdgeInsets.all(MediaQuery.of(context).size.width / 6),
+              padding: EdgeInsets.all(MediaQuery.of(context).size.width / 12),
               child: SwipingCardDeck(
-                cardWidth: MediaQuery.of(context).size.width / 1.5,
+                cardWidth: MediaQuery.of(context).size.width * 0.83,
                 cardDeck: [
                   Card(
                     child: Padding(

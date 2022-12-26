@@ -23,7 +23,9 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Home')),
+      appBar: AppBar(
+        toolbarHeight: 0, // Only to mask the top screen with the front cameras
+      ),
       body: Center(
         child: CustomBackground(
           child: IndexedStack(

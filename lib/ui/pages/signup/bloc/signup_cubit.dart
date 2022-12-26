@@ -2,7 +2,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:go_router/go_router.dart';
 import 'package:triviaflutter/common/models/user/user.dart' as triviauser;
 import 'package:triviaflutter/common/repository/auth_repository.dart';
 import 'package:triviaflutter/common/repository/user_repository.dart';
@@ -23,13 +22,11 @@ class SignupCubit extends Cubit<SignupState> {
   }) : super(SignupState.initial());
 
   redirectIfLoggedIn(BuildContext context) async {
-    var firebaseCurrentUser = FirebaseAuth.instance.currentUser;
-    if (firebaseCurrentUser == null) {
-      return;
-    }
-    final applicationUser = await userRepository.findUserById(firebaseCurrentUser.uid);
-    if (applicationUser != null) {
-      context.goNamed("home");
+    var currentUser = await userRepository.getCurrentUser();
+    if (currentUser != null) {
+      emit(SignupState.loggedIn());
+    } else {
+      emit(SignupState.phoneNumberForm());
     }
   }
 
@@ -57,8 +54,7 @@ class SignupCubit extends Cubit<SignupState> {
     emit(SignupState.accountFetching());
     try {
       await authRepository.verifySmsCode(verificationId, smsCode);
-      final userId = FirebaseAuth.instance.currentUser!.uid;
-      final user = await userRepository.findUserById(userId);
+      final user = await userRepository.getCurrentUser();
       if (user == null) {
         emit(SignupState.accountCreation());
       } else {
@@ -74,18 +70,19 @@ class SignupCubit extends Cubit<SignupState> {
 
   createAccount(BuildContext context, String username) async {
     emit(SignupState.accountCreating());
+
+    final uid = authRepository.getCurrentUserId()!;
     try {
       await userRepository.createUser(
-        FirebaseAuth.instance.currentUser!.uid,
+        uid,
         new triviauser.User(
-          id: FirebaseAuth.instance.currentUser!.uid,
+          id: uid,
           pseudo: username,
           avatar: "",
           score: 0,
         ),
       );
       emit(SignupState.loggedIn());
-      context.goNamed("home");
     } catch (err) {
       print(err);
       emit(SignupState.accountCreationError(

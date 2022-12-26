@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:triviaflutter/ui/pages/home/ranking/rank_card.dart';
+import 'package:triviaflutter/ui/pages/home/ranking/rank_line.dart';
 
 import '../../../../common/models/user/fake_user.dart';
 import '../../../../common/models/user/user.dart';
@@ -32,19 +32,20 @@ class _RankingPageState extends State<RankingPage> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Card(
+        Padding(
+          padding: EdgeInsets.all(8),
           child: TextField(
-            decoration: InputDecoration(
-              icon: Icon(Icons.search),
-              hintText: "Rechercher un utilisateur",
+              decoration: InputDecoration(
+                icon: Icon(Icons.search),
+                hintText: "Rechercher un utilisateur",
+              ),
             ),
-          ),
         ),
         Expanded(
           child: ListView.builder(
             itemCount: userRanking.length,
             itemBuilder: (context, index) {
-              return RankCard(user: userRanking[index], rank: index);
+              return RankLine(user: userRanking[index], rank: index);
             },
           ),
         ),

@@ -1,4 +1,5 @@
 import 'package:triviaflutter/common/datasources/remote/UserFirestore.dart';
+import 'package:triviaflutter/common/datasources/remote/auth_firebase.dart';
 
 import '../models/user/user.dart';
 
@@ -7,17 +8,46 @@ class UserRepository {
 
   UserRepository._();
 
-  static getInstance() {
+  static UserRepository getInstance() {
     return _instance ??= new UserRepository._();
   }
 
-  final UserFirestore userFirestore = UserFirestore.getInstance();
+  final UserFirestore _userFirestore = UserFirestore.getInstance();
+  final AuthFirebase _authFirebase = AuthFirebase.getInstance();
+
+  User? _currentUser;
+
+  User get currentUser {
+    return _currentUser!;
+  }
 
   Future<User?> findUserById(String userId) async {
-    return userFirestore.findUserById(userId);
+    return _userFirestore.findUserById(userId);
   }
 
   Future<void> createUser(String userId, User user) async {
-    return userFirestore.createUser(userId, user);
+    return _userFirestore.createUser(userId, user);
+  }
+
+  Future<User?> getCurrentUser() async {
+    if (_currentUser != null) {
+      return _currentUser;
+    }
+    final userId = _authFirebase.getCurrentUserId();
+    if (userId == null) {
+      return null;
+    }
+
+    final appUser = await findUserById(userId);
+    if (appUser != null) {
+      this._currentUser = appUser;
+    }
+
+    return appUser;
+  }
+
+  Future<void> logout() async{
+    await _authFirebase.logout();
+    this._currentUser = null;
   }
 }
