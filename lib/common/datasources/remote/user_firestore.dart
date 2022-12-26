@@ -18,6 +18,20 @@ class UserFirestore {
         );
   }
 
+  static User? mapUserDocumentToUser(DocumentSnapshot<User> document) {
+    final documentContent = document.data();
+    if (documentContent == null) {
+      return null;
+    }
+
+    return User(
+        id: document.id,
+        pseudo: documentContent.pseudo,
+        avatar: documentContent.avatar,
+        score: documentContent.score,
+    );
+  }
+
   static UserFirestore getInstance() {
     _instance ??= UserFirestore._();
 
@@ -31,8 +45,17 @@ class UserFirestore {
   }
 
   Future<User?> findUserById(String userId) async {
-    DocumentSnapshot<User> data = await _userCollectionRef.doc(userId).get();
+    DocumentSnapshot<User> document = await _userCollectionRef.doc(userId).get();
 
-    return data.data();
+    return mapUserDocumentToUser(document);
+  }
+
+  Future<List<User>> listUsers() async {
+    QuerySnapshot<User> querySnapshot = await _userCollectionRef.get();
+
+    return querySnapshot
+        .docs
+        .map((queryDocumentSnapshot) => mapUserDocumentToUser(queryDocumentSnapshot)!)
+        .toList();
   }
 }

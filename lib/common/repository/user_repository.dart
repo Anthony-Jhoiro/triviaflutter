@@ -1,4 +1,4 @@
-import 'package:triviaflutter/common/datasources/remote/UserFirestore.dart';
+import 'package:triviaflutter/common/datasources/remote/user_firestore.dart';
 import 'package:triviaflutter/common/datasources/remote/auth_firebase.dart';
 
 import '../models/user/user.dart';
@@ -49,5 +49,9 @@ class UserRepository {
   Future<void> logout() async{
     await _authFirebase.logout();
     this._currentUser = null;
+  }
+
+  Future<List<User>> listUsers() {
+    return _userFirestore.listUsers();
   }
 }
