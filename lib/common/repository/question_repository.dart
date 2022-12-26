@@ -1,7 +1,7 @@
 import 'package:triviaflutter/common/datasources/remote/question_api.dart';
 import 'package:triviaflutter/common/models/question_document/question_document.dart';
 
-import '../datasources/remote/QuestionFirestore.dart';
+import '../datasources/remote/question_firestore.dart';
 import '../models/question/question.dart';
 
 class QuestionRepository {
