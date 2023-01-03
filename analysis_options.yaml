@@ -1,6 +1,10 @@
 analyzer:
   plugins:
     - dart_code_metrics
+  exclude:
+    - lib/ui/theme.dart
+    - lib/**/*.freezed.dart
+    - lib/**/*.g.dart
 
 dart_code_metrics:
   anti-patterns:
