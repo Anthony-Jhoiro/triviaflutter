@@ -16,5 +16,6 @@ class UserDto with _$UserDto {
   }) = _UserDto;
 
   /// Creates a User from Json map
-  factory UserDto.fromJson(Map<String, dynamic> data) => _$UserDtoFromJson(data);
+  factory UserDto.fromJson(Map<String, dynamic> data) =>
+      _$UserDtoFromJson(data);
 }

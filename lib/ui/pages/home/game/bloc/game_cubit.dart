@@ -42,9 +42,9 @@ class GameCubit extends Cubit<GameStatus> {
 
   int getScoreFromQuestion(Question question) {
     switch (question.difficulty) {
-      case 'hard' :
+      case 'hard':
         return 5;
-      case 'medium' :
+      case 'medium':
         return 3;
 
       default:

@@ -5,7 +5,6 @@ import 'package:triviaflutter/common/models/question.dart';
 import 'package:triviaflutter/ui/pages/home/game/bloc/game_cubit.dart';
 import 'package:triviaflutter/ui/pages/home/game/widgets/question_answer.dart';
 
-
 class QuestionView extends StatefulWidget {
   final Question question;
   final List<String> answers;
@@ -26,7 +25,6 @@ class QuestionView extends StatefulWidget {
 class _QuestionViewState extends State<QuestionView> {
   @override
   Widget build(BuildContext context) {
-
     return Column(
       children: [
         Expanded(
@@ -65,25 +63,24 @@ class _QuestionViewState extends State<QuestionView> {
         ),
         Expanded(
           child: Column(
-            children: widget.answers
-                .map((answer) {
-                  final state = widget.gameCubit.state;
-                  final selected = state is AnswerSelected && state.selectedAnswer == answer;
+            children: widget.answers.map((answer) {
+              final state = widget.gameCubit.state;
+              final selected =
+                  state is AnswerSelected && state.selectedAnswer == answer;
 
-                  return QuestionAnswer(
-                      onPress: () {
-                        if (state is AnswerSelected && state.selectedAnswer == answer) {
-                          widget.gameCubit.answerConfirmed(answer);
-                        } else {
-                          widget.gameCubit.selectAnswer(answer);
-
-                        }
-                      },
-                      answer: HtmlUnescape().convert(answer),
-                      selected: selected,
-                    );
-                })
-                .toList(),
+              return QuestionAnswer(
+                onPress: () {
+                  if (state is AnswerSelected &&
+                      state.selectedAnswer == answer) {
+                    widget.gameCubit.answerConfirmed(answer);
+                  } else {
+                    widget.gameCubit.selectAnswer(answer);
+                  }
+                },
+                answer: HtmlUnescape().convert(answer),
+                selected: selected,
+              );
+            }).toList(),
           ),
         ),
       ],

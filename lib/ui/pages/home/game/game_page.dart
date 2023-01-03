@@ -5,7 +5,6 @@ import 'package:triviaflutter/common/repository/question_repository.dart';
 import 'package:triviaflutter/ui/pages/home/game/bloc/game_cubit.dart';
 import 'package:triviaflutter/ui/pages/home/game/widgets/question_view.dart';
 
-
 class GamePage extends StatefulWidget {
   const GamePage({Key? key}) : super(key: key);
 

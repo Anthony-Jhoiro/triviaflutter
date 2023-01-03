@@ -2,7 +2,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../question_dto/question_dto.dart';
 
-
 part 'question_document_dto.freezed.dart';
 part 'question_document_dto.g.dart';
 

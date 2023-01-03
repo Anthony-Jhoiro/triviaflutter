@@ -135,24 +135,25 @@ class InstantCurve extends Curve {
   }
 }
 
-
 class QuestionAnswer extends StatefulWidget {
   final String answer;
   final bool selected;
   final Function onPress;
 
-  const QuestionAnswer({Key? key, required this.answer, required this.onPress, required this.selected})
+  const QuestionAnswer(
+      {Key? key,
+      required this.answer,
+      required this.onPress,
+      required this.selected})
       : super(key: key);
 
   @override
   State<QuestionAnswer> createState() => _QuestionAnswerState();
 }
 
-class _QuestionAnswerState extends State<QuestionAnswer> with SingleTickerProviderStateMixin {
-
-
+class _QuestionAnswerState extends State<QuestionAnswer>
+    with SingleTickerProviderStateMixin {
   // bool selected = false;
-
 
   Future<void> select() async {
     widget.onPress();
@@ -165,15 +166,18 @@ class _QuestionAnswerState extends State<QuestionAnswer> with SingleTickerProvid
         width: double.infinity,
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 300),
-          color: widget.selected ? Theme.of(context).primaryColor : Colors.white,
+          color:
+              widget.selected ? Theme.of(context).primaryColor : Colors.white,
           child: InkWell(
             child: Padding(
               padding: const EdgeInsets.all(20.0),
               child: Center(
                 child: Text(
-                    widget.answer,
+                  widget.answer,
                   style: TextStyle(
-                    color: widget.selected ? Theme.of(context).colorScheme.onPrimary : Colors.black,
+                    color: widget.selected
+                        ? Theme.of(context).colorScheme.onPrimary
+                        : Colors.black,
                   ),
                 ),
               ),

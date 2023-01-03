@@ -1,6 +1,4 @@
-
 part of 'ranking_cubit.dart';
-
 
 @freezed
 class RankingState {

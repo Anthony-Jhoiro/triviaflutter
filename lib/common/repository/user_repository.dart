@@ -3,7 +3,6 @@ import 'package:triviaflutter/common/datasources/remote/auth_firebase.dart';
 
 import '../models/user.dart';
 
-
 class UserRepository {
   static UserRepository? _instance;
 
@@ -47,7 +46,7 @@ class UserRepository {
     return appUser;
   }
 
-  Future<void> logout() async{
+  Future<void> logout() async {
     await _authFirebase.logout();
     this._currentUser = null;
   }
