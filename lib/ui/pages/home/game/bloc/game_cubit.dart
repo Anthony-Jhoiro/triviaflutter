@@ -1,8 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-
-import '../../../../../common/models/question/question.dart';
-import '../../../../../common/repository/question_repository.dart';
+import 'package:triviaflutter/common/models/question.dart';
+import 'package:triviaflutter/common/repository/question_repository.dart';
 
 part 'game_cubit.freezed.dart';
 
@@ -34,10 +33,37 @@ class GameCubit extends Cubit<GameStatus> {
       return;
     }
     question = questions[questionIndex];
-    emit(GameStatus.questionSelected(question, shuffleAnswers(question)));
+    emit(GameStatus.questionSelected(question));
   }
 
-  List<String> shuffleAnswers(Question question) {
-    return [...question.incorrect_answers, question.correct_answer]..shuffle();
+  Future<void> selectAnswer(String answer) async {
+    emit(GameStatus.answerSelected(question, answer));
+  }
+
+  int getScoreFromQuestion(Question question) {
+    switch (question.difficulty) {
+      case 'hard' :
+        return 5;
+      case 'medium' :
+        return 3;
+
+      default:
+        return 1;
+    }
+  }
+
+  Future<void> answerConfirmed(String answer) async {
+    if (answer == question.correct_answer) {
+      emit(GameStatus.validAnswer(question));
+    } else {
+      emit(GameStatus.wrongAnswer(question));
+    }
+
+    await questionRepository.increaseScore(getScoreFromQuestion(question));
+
+    Future.delayed(
+      const Duration(seconds: 2),
+      nextQuestion,
+    );
   }
 }

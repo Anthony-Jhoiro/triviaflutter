@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'question.dart';
+part of 'question_dto.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,12 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-Question _$QuestionFromJson(Map<String, dynamic> json) {
+QuestionDto _$QuestionDtoFromJson(Map<String, dynamic> json) {
   return _Question.fromJson(json);
 }
 
 /// @nodoc
-mixin _$Question {
+mixin _$QuestionDto {
   String get category => throw _privateConstructorUsedError;
   String get correct_answer => throw _privateConstructorUsedError;
   String get difficulty => throw _privateConstructorUsedError;
@@ -29,14 +29,15 @@ mixin _$Question {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $QuestionCopyWith<Question> get copyWith =>
+  $QuestionDtoCopyWith<QuestionDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $QuestionCopyWith<$Res> {
-  factory $QuestionCopyWith(Question value, $Res Function(Question) then) =
-      _$QuestionCopyWithImpl<$Res>;
+abstract class $QuestionDtoCopyWith<$Res> {
+  factory $QuestionDtoCopyWith(
+          QuestionDto value, $Res Function(QuestionDto) then) =
+      _$QuestionDtoCopyWithImpl<$Res>;
   $Res call(
       {String category,
       String correct_answer,
@@ -47,12 +48,12 @@ abstract class $QuestionCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$QuestionCopyWithImpl<$Res> implements $QuestionCopyWith<$Res> {
-  _$QuestionCopyWithImpl(this._value, this._then);
+class _$QuestionDtoCopyWithImpl<$Res> implements $QuestionDtoCopyWith<$Res> {
+  _$QuestionDtoCopyWithImpl(this._value, this._then);
 
-  final Question _value;
+  final QuestionDto _value;
   // ignore: unused_field
-  final $Res Function(Question) _then;
+  final $Res Function(QuestionDto) _then;
 
   @override
   $Res call({
@@ -93,7 +94,8 @@ class _$QuestionCopyWithImpl<$Res> implements $QuestionCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$$_QuestionCopyWith<$Res> implements $QuestionCopyWith<$Res> {
+abstract class _$$_QuestionCopyWith<$Res>
+    implements $QuestionDtoCopyWith<$Res> {
   factory _$$_QuestionCopyWith(
           _$_Question value, $Res Function(_$_Question) then) =
       __$$_QuestionCopyWithImpl<$Res>;
@@ -108,7 +110,7 @@ abstract class _$$_QuestionCopyWith<$Res> implements $QuestionCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_QuestionCopyWithImpl<$Res> extends _$QuestionCopyWithImpl<$Res>
+class __$$_QuestionCopyWithImpl<$Res> extends _$QuestionDtoCopyWithImpl<$Res>
     implements _$$_QuestionCopyWith<$Res> {
   __$$_QuestionCopyWithImpl(
       _$_Question _value, $Res Function(_$_Question) _then)
@@ -190,7 +192,7 @@ class _$_Question implements _Question {
 
   @override
   String toString() {
-    return 'Question(category: $category, correct_answer: $correct_answer, difficulty: $difficulty, incorrect_answers: $incorrect_answers, question: $question, type: $type)';
+    return 'QuestionDto(category: $category, correct_answer: $correct_answer, difficulty: $difficulty, incorrect_answers: $incorrect_answers, question: $question, type: $type)';
   }
 
   @override
@@ -233,7 +235,7 @@ class _$_Question implements _Question {
   }
 }
 
-abstract class _Question implements Question {
+abstract class _Question implements QuestionDto {
   const factory _Question(
       {required final String category,
       required final String correct_answer,

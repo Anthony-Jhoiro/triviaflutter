@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:triviaflutter/common/models/user.dart';
 import 'package:triviaflutter/ui/common/user/profile_picture.dart';
 import 'package:triviaflutter/ui/pages/home/ranking/widgets/rank_rank.dart';
 
-import '../../../../../common/models/user/user.dart';
 
 class RankLine extends StatelessWidget {
   final User user;

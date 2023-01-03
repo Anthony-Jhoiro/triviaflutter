@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:triviaflutter/common/models/user/user.dart' as triviauser;
+import 'package:triviaflutter/common/models/user.dart' as triviauser;
 import 'package:triviaflutter/common/repository/auth_repository.dart';
 import 'package:triviaflutter/common/repository/user_repository.dart';
 
@@ -74,7 +74,6 @@ class SignupCubit extends Cubit<SignupState> {
     final uid = authRepository.getCurrentUserId()!;
     try {
       await userRepository.createUser(
-        uid,
         new triviauser.User(
           id: uid,
           pseudo: username,

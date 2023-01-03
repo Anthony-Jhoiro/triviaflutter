@@ -1,15 +1,15 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'question.freezed.dart';
-part 'question.g.dart';
+part 'question_dto.freezed.dart';
+part 'question_dto.g.dart';
 
-/// {@template question}
+/// {@template question_dto}
 /// Question description
 /// {@endtemplate}
 @freezed
-class Question with _$Question {
-  /// {@macro question}
-  const factory Question({
+class QuestionDto with _$QuestionDto {
+  /// {@macro question_dto}
+  const factory QuestionDto({
     required String category,
     required String correct_answer,
     required String difficulty,
@@ -19,6 +19,6 @@ class Question with _$Question {
   }) = _Question;
 
   /// Creates a Question from Json map
-  factory Question.fromJson(Map<String, dynamic> data) =>
-      _$QuestionFromJson(data);
+  factory QuestionDto.fromJson(Map<String, dynamic> data) =>
+      _$QuestionDtoFromJson(data);
 }
