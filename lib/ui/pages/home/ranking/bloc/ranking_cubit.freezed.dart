@@ -21,7 +21,7 @@ mixin _$RankingState {
     required TResult Function() initial,
     required TResult Function() fetchingUsers,
     required TResult Function(String message) fetchingError,
-    required TResult Function(List<User> users) userLoaded,
+    required TResult Function(List<UserWithRank> users) userLoaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -29,7 +29,7 @@ mixin _$RankingState {
     TResult Function()? initial,
     TResult Function()? fetchingUsers,
     TResult Function(String message)? fetchingError,
-    TResult Function(List<User> users)? userLoaded,
+    TResult Function(List<UserWithRank> users)? userLoaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -37,7 +37,7 @@ mixin _$RankingState {
     TResult Function()? initial,
     TResult Function()? fetchingUsers,
     TResult Function(String message)? fetchingError,
-    TResult Function(List<User> users)? userLoaded,
+    TResult Function(List<UserWithRank> users)? userLoaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -125,7 +125,7 @@ class _$Initial implements Initial {
     required TResult Function() initial,
     required TResult Function() fetchingUsers,
     required TResult Function(String message) fetchingError,
-    required TResult Function(List<User> users) userLoaded,
+    required TResult Function(List<UserWithRank> users) userLoaded,
   }) {
     return initial();
   }
@@ -136,7 +136,7 @@ class _$Initial implements Initial {
     TResult Function()? initial,
     TResult Function()? fetchingUsers,
     TResult Function(String message)? fetchingError,
-    TResult Function(List<User> users)? userLoaded,
+    TResult Function(List<UserWithRank> users)? userLoaded,
   }) {
     return initial?.call();
   }
@@ -147,7 +147,7 @@ class _$Initial implements Initial {
     TResult Function()? initial,
     TResult Function()? fetchingUsers,
     TResult Function(String message)? fetchingError,
-    TResult Function(List<User> users)? userLoaded,
+    TResult Function(List<UserWithRank> users)? userLoaded,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -242,7 +242,7 @@ class _$FetchingUsers implements FetchingUsers {
     required TResult Function() initial,
     required TResult Function() fetchingUsers,
     required TResult Function(String message) fetchingError,
-    required TResult Function(List<User> users) userLoaded,
+    required TResult Function(List<UserWithRank> users) userLoaded,
   }) {
     return fetchingUsers();
   }
@@ -253,7 +253,7 @@ class _$FetchingUsers implements FetchingUsers {
     TResult Function()? initial,
     TResult Function()? fetchingUsers,
     TResult Function(String message)? fetchingError,
-    TResult Function(List<User> users)? userLoaded,
+    TResult Function(List<UserWithRank> users)? userLoaded,
   }) {
     return fetchingUsers?.call();
   }
@@ -264,7 +264,7 @@ class _$FetchingUsers implements FetchingUsers {
     TResult Function()? initial,
     TResult Function()? fetchingUsers,
     TResult Function(String message)? fetchingError,
-    TResult Function(List<User> users)? userLoaded,
+    TResult Function(List<UserWithRank> users)? userLoaded,
     required TResult orElse(),
   }) {
     if (fetchingUsers != null) {
@@ -383,7 +383,7 @@ class _$FetchingError implements FetchingError {
     required TResult Function() initial,
     required TResult Function() fetchingUsers,
     required TResult Function(String message) fetchingError,
-    required TResult Function(List<User> users) userLoaded,
+    required TResult Function(List<UserWithRank> users) userLoaded,
   }) {
     return fetchingError(message);
   }
@@ -394,7 +394,7 @@ class _$FetchingError implements FetchingError {
     TResult Function()? initial,
     TResult Function()? fetchingUsers,
     TResult Function(String message)? fetchingError,
-    TResult Function(List<User> users)? userLoaded,
+    TResult Function(List<UserWithRank> users)? userLoaded,
   }) {
     return fetchingError?.call(message);
   }
@@ -405,7 +405,7 @@ class _$FetchingError implements FetchingError {
     TResult Function()? initial,
     TResult Function()? fetchingUsers,
     TResult Function(String message)? fetchingError,
-    TResult Function(List<User> users)? userLoaded,
+    TResult Function(List<UserWithRank> users)? userLoaded,
     required TResult orElse(),
   }) {
     if (fetchingError != null) {
@@ -466,7 +466,7 @@ abstract class _$$UserLoadedCopyWith<$Res> {
   factory _$$UserLoadedCopyWith(
           _$UserLoaded value, $Res Function(_$UserLoaded) then) =
       __$$UserLoadedCopyWithImpl<$Res>;
-  $Res call({List<User> users});
+  $Res call({List<UserWithRank> users});
 }
 
 /// @nodoc
@@ -487,7 +487,7 @@ class __$$UserLoadedCopyWithImpl<$Res> extends _$RankingStateCopyWithImpl<$Res>
       users == freezed
           ? _value._users
           : users // ignore: cast_nullable_to_non_nullable
-              as List<User>,
+              as List<UserWithRank>,
     ));
   }
 }
@@ -495,11 +495,11 @@ class __$$UserLoadedCopyWithImpl<$Res> extends _$RankingStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$UserLoaded implements UserLoaded {
-  const _$UserLoaded(final List<User> users) : _users = users;
+  const _$UserLoaded(final List<UserWithRank> users) : _users = users;
 
-  final List<User> _users;
+  final List<UserWithRank> _users;
   @override
-  List<User> get users {
+  List<UserWithRank> get users {
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_users);
   }
@@ -532,7 +532,7 @@ class _$UserLoaded implements UserLoaded {
     required TResult Function() initial,
     required TResult Function() fetchingUsers,
     required TResult Function(String message) fetchingError,
-    required TResult Function(List<User> users) userLoaded,
+    required TResult Function(List<UserWithRank> users) userLoaded,
   }) {
     return userLoaded(users);
   }
@@ -543,7 +543,7 @@ class _$UserLoaded implements UserLoaded {
     TResult Function()? initial,
     TResult Function()? fetchingUsers,
     TResult Function(String message)? fetchingError,
-    TResult Function(List<User> users)? userLoaded,
+    TResult Function(List<UserWithRank> users)? userLoaded,
   }) {
     return userLoaded?.call(users);
   }
@@ -554,7 +554,7 @@ class _$UserLoaded implements UserLoaded {
     TResult Function()? initial,
     TResult Function()? fetchingUsers,
     TResult Function(String message)? fetchingError,
-    TResult Function(List<User> users)? userLoaded,
+    TResult Function(List<UserWithRank> users)? userLoaded,
     required TResult orElse(),
   }) {
     if (userLoaded != null) {
@@ -602,9 +602,9 @@ class _$UserLoaded implements UserLoaded {
 }
 
 abstract class UserLoaded implements RankingState {
-  const factory UserLoaded(final List<User> users) = _$UserLoaded;
+  const factory UserLoaded(final List<UserWithRank> users) = _$UserLoaded;
 
-  List<User> get users;
+  List<UserWithRank> get users;
   @JsonKey(ignore: true)
   _$$UserLoadedCopyWith<_$UserLoaded> get copyWith =>
       throw _privateConstructorUsedError;
