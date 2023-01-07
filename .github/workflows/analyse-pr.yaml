@@ -19,6 +19,9 @@ jobs:
 
       - run: flutter pub get
 
+      - name: run tests
+        run: flutter test
+
       # Check for any formatting issues in the code.
       - run: flutter format --set-exit-if-changed .
 
