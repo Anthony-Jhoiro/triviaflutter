@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'user.dart';
+part of 'user_dto.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,141 +14,126 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-User _$UserFromJson(Map<String, dynamic> json) {
-  return _User.fromJson(json);
+UserDto _$UserDtoFromJson(Map<String, dynamic> json) {
+  return _UserDto.fromJson(json);
 }
 
 /// @nodoc
-mixin _$User {
-  String get id => throw _privateConstructorUsedError;
-  String get pseudo => throw _privateConstructorUsedError;
-  String get avatar => throw _privateConstructorUsedError;
-  int get score => throw _privateConstructorUsedError;
+mixin _$UserDto {
+  String? get pseudo => throw _privateConstructorUsedError;
+  String? get avatar => throw _privateConstructorUsedError;
+  int? get score => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $UserCopyWith<User> get copyWith => throw _privateConstructorUsedError;
+  $UserDtoCopyWith<UserDto> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $UserCopyWith<$Res> {
-  factory $UserCopyWith(User value, $Res Function(User) then) =
-      _$UserCopyWithImpl<$Res>;
-  $Res call({String id, String pseudo, String avatar, int score});
+abstract class $UserDtoCopyWith<$Res> {
+  factory $UserDtoCopyWith(UserDto value, $Res Function(UserDto) then) =
+      _$UserDtoCopyWithImpl<$Res>;
+  $Res call({String? pseudo, String? avatar, int? score});
 }
 
 /// @nodoc
-class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
-  _$UserCopyWithImpl(this._value, this._then);
+class _$UserDtoCopyWithImpl<$Res> implements $UserDtoCopyWith<$Res> {
+  _$UserDtoCopyWithImpl(this._value, this._then);
 
-  final User _value;
+  final UserDto _value;
   // ignore: unused_field
-  final $Res Function(User) _then;
+  final $Res Function(UserDto) _then;
 
   @override
   $Res call({
-    Object? id = freezed,
     Object? pseudo = freezed,
     Object? avatar = freezed,
     Object? score = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
       pseudo: pseudo == freezed
           ? _value.pseudo
           : pseudo // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       avatar: avatar == freezed
           ? _value.avatar
           : avatar // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       score: score == freezed
           ? _value.score
           : score // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
     ));
   }
 }
 
 /// @nodoc
-abstract class _$$_UserCopyWith<$Res> implements $UserCopyWith<$Res> {
-  factory _$$_UserCopyWith(_$_User value, $Res Function(_$_User) then) =
-      __$$_UserCopyWithImpl<$Res>;
+abstract class _$$_UserDtoCopyWith<$Res> implements $UserDtoCopyWith<$Res> {
+  factory _$$_UserDtoCopyWith(
+          _$_UserDto value, $Res Function(_$_UserDto) then) =
+      __$$_UserDtoCopyWithImpl<$Res>;
   @override
-  $Res call({String id, String pseudo, String avatar, int score});
+  $Res call({String? pseudo, String? avatar, int? score});
 }
 
 /// @nodoc
-class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
-    implements _$$_UserCopyWith<$Res> {
-  __$$_UserCopyWithImpl(_$_User _value, $Res Function(_$_User) _then)
-      : super(_value, (v) => _then(v as _$_User));
+class __$$_UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
+    implements _$$_UserDtoCopyWith<$Res> {
+  __$$_UserDtoCopyWithImpl(_$_UserDto _value, $Res Function(_$_UserDto) _then)
+      : super(_value, (v) => _then(v as _$_UserDto));
 
   @override
-  _$_User get _value => super._value as _$_User;
+  _$_UserDto get _value => super._value as _$_UserDto;
 
   @override
   $Res call({
-    Object? id = freezed,
     Object? pseudo = freezed,
     Object? avatar = freezed,
     Object? score = freezed,
   }) {
-    return _then(_$_User(
-      id: id == freezed
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
+    return _then(_$_UserDto(
       pseudo: pseudo == freezed
           ? _value.pseudo
           : pseudo // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       avatar: avatar == freezed
           ? _value.avatar
           : avatar // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       score: score == freezed
           ? _value.score
           : score // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$_User implements _User {
-  const _$_User(
-      {required this.id,
-      required this.pseudo,
-      required this.avatar,
-      required this.score});
+class _$_UserDto implements _UserDto {
+  const _$_UserDto(
+      {required this.pseudo, required this.avatar, required this.score});
 
-  factory _$_User.fromJson(Map<String, dynamic> json) => _$$_UserFromJson(json);
+  factory _$_UserDto.fromJson(Map<String, dynamic> json) =>
+      _$$_UserDtoFromJson(json);
 
   @override
-  final String id;
+  final String? pseudo;
   @override
-  final String pseudo;
+  final String? avatar;
   @override
-  final String avatar;
-  @override
-  final int score;
+  final int? score;
 
   @override
   String toString() {
-    return 'User(id: $id, pseudo: $pseudo, avatar: $avatar, score: $score)';
+    return 'UserDto(pseudo: $pseudo, avatar: $avatar, score: $score)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_User &&
-            const DeepCollectionEquality().equals(other.id, id) &&
+            other is _$_UserDto &&
             const DeepCollectionEquality().equals(other.pseudo, pseudo) &&
             const DeepCollectionEquality().equals(other.avatar, avatar) &&
             const DeepCollectionEquality().equals(other.score, score));
@@ -158,42 +143,39 @@ class _$_User implements _User {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(id),
       const DeepCollectionEquality().hash(pseudo),
       const DeepCollectionEquality().hash(avatar),
       const DeepCollectionEquality().hash(score));
 
   @JsonKey(ignore: true)
   @override
-  _$$_UserCopyWith<_$_User> get copyWith =>
-      __$$_UserCopyWithImpl<_$_User>(this, _$identity);
+  _$$_UserDtoCopyWith<_$_UserDto> get copyWith =>
+      __$$_UserDtoCopyWithImpl<_$_UserDto>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UserToJson(
+    return _$$_UserDtoToJson(
       this,
     );
   }
 }
 
-abstract class _User implements User {
-  const factory _User(
-      {required final String id,
-      required final String pseudo,
-      required final String avatar,
-      required final int score}) = _$_User;
+abstract class _UserDto implements UserDto {
+  const factory _UserDto(
+      {required final String? pseudo,
+      required final String? avatar,
+      required final int? score}) = _$_UserDto;
 
-  factory _User.fromJson(Map<String, dynamic> json) = _$_User.fromJson;
+  factory _UserDto.fromJson(Map<String, dynamic> json) = _$_UserDto.fromJson;
 
   @override
-  String get id;
+  String? get pseudo;
   @override
-  String get pseudo;
+  String? get avatar;
   @override
-  String get avatar;
-  @override
-  int get score;
+  int? get score;
   @override
   @JsonKey(ignore: true)
-  _$$_UserCopyWith<_$_User> get copyWith => throw _privateConstructorUsedError;
+  _$$_UserDtoCopyWith<_$_UserDto> get copyWith =>
+      throw _privateConstructorUsedError;
 }

@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:triviaflutter/common/models/question_document/question_document.dart';
+import 'package:triviaflutter/common/models/dto/question_document_dto/question_document_dto.dart';
 import 'package:triviaflutter/core/tools/date_utils.dart';
 
 class QuestionFirebase {
@@ -8,22 +8,14 @@ class QuestionFirebase {
 
   static QuestionFirebase? _instance;
 
-  static late final CollectionReference<QuestionDocument> _questionRef;
+  static late final CollectionReference<QuestionDocumentDto> _questionRef;
 
   QuestionFirebase._() {
     _questionRef =
         _firebaseFirestore.collection("questionOfTheDay").withConverter(
               fromFirestore: (snapshot, _) =>
-                  QuestionDocument.fromJson(snapshot.data()!),
-              toFirestore: (questionDocument, _) {
-                print("bipidibou");
-                print(questionDocument);
-                var json = questionDocument.toJson();
-
-                print(json);
-
-                return json;
-              },
+                  QuestionDocumentDto.fromJson(snapshot.data()!),
+              toFirestore: (questionDocument, _) => questionDocument.toJson(),
             );
   }
 
@@ -33,7 +25,7 @@ class QuestionFirebase {
     return _instance!;
   }
 
-  Future<void> insertQuestions(QuestionDocument questions) async {
+  Future<void> insertQuestions(QuestionDocumentDto questions) async {
     print(questions);
     print(getDateAsString());
     print("dadada");
@@ -42,8 +34,8 @@ class QuestionFirebase {
     return;
   }
 
-  Future<QuestionDocument?> getTodayQuestions() async {
-    DocumentSnapshot<QuestionDocument> data =
+  Future<QuestionDocumentDto?> getTodayQuestions() async {
+    DocumentSnapshot<QuestionDocumentDto> data =
         await _questionRef.doc(getDateAsString()).get();
 
     return data.data();

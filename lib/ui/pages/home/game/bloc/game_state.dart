@@ -10,12 +10,13 @@ class GameStatus with _$GameStatus {
 
   const factory GameStatus.error(String message) = Error;
 
-  const factory GameStatus.questionSelected(
-    Question question,
-    List<String> answers,
-  ) = QuestionSelected;
+  const factory GameStatus.questionSelected(Question question) =
+      QuestionSelected;
 
-  const factory GameStatus.answerSelected(Question question) = AnswerSelected;
+  const factory GameStatus.answerSelected(
+    Question question,
+    String selectedAnswer,
+  ) = AnswerSelected;
 
   const factory GameStatus.answerConfirmed(Question question) = AnswerConfirmed;
 

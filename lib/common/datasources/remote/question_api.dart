@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:triviaflutter/common/models/question/question.dart';
+import 'package:triviaflutter/common/models/dto/question_dto/question_dto.dart';
 import 'package:http/http.dart' as http;
 
 class QuestionApi {
@@ -17,19 +17,14 @@ class QuestionApi {
     return _instance!;
   }
 
-  Future<List<Question>> getQuestionsOfTheDay() async {
-    print("tata");
+  Future<List<QuestionDto>> getQuestionsOfTheDay() async {
     final queryParams = {
       'amount': _questionCount.toString(),
     };
 
     final uri = Uri.https(_baseUrl, "/api.php", queryParams);
 
-    print("here");
-
     final response = await http.get(uri);
-
-    print("threr");
 
     if (response.statusCode == 200) {
       // I prefer this approach instead of creating another dto, because it
@@ -37,7 +32,7 @@ class QuestionApi {
 
       var questionsRaw = jsonDecode(response.body)['results'] as List;
 
-      return questionsRaw.map((e) => Question.fromJson(e)).toList();
+      return questionsRaw.map((e) => QuestionDto.fromJson(e)).toList();
     }
     throw Error();
   }

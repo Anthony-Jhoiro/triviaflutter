@@ -3,7 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:triviaflutter/common/repository/user_repository.dart';
 import 'package:triviaflutter/ui/pages/home/profile/rounded_score.dart';
 
-import '../../../../common/models/user/user.dart';
+import '../../../../common/models/user.dart';
 import '../../../common/button.dart';
 import '../../../common/user/profile_picture.dart';
 

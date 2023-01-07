@@ -1,7 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:json_theme/src/codec/theme_decoder.dart';
-import 'package:triviaflutter/services/auth/auth.dart';
 import 'package:triviaflutter/ui/theme.dart';
 
 import 'firebase_options.dart';
@@ -12,7 +11,6 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  AuthService().init();
 
   runApp(const MyApp());
 }

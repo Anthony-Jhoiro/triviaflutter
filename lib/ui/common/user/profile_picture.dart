@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../common/models/user/user.dart';
+import '../../../common/models/user.dart';
 
 class MeepleClipper extends CustomClipper<Path> {
   @override

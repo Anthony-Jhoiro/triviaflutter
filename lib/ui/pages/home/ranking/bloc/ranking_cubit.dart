@@ -1,8 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-
-import '../../../../../common/models/user/user.dart';
-import '../../../../../common/repository/user_repository.dart';
+import 'package:triviaflutter/common/models/user.dart';
+import 'package:triviaflutter/common/repository/user_repository.dart';
 
 part 'ranking_cubit.freezed.dart';
 
