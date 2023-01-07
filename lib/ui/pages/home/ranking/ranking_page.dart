@@ -31,8 +31,9 @@ class RankingPage extends StatelessWidget {
                   itemCount: state.users.length,
                   itemBuilder: (context, index) {
                     return RankLine(
-                        user: state.users[index],
-                        rank: state.users[index].rank);
+                      user: state.users[index],
+                      rank: state.users[index].rank,
+                    );
                   },
                 ),
               ),

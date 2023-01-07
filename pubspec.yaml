@@ -56,6 +56,9 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
+  bloc_test: ^9.1.0
+  mocktail: ^0.3.0
+
   json_theme: ^4.0.1+2
 
   # The "flutter_lints" package below contains a set of recommended lints to
