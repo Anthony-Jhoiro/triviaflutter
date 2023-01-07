@@ -25,10 +25,10 @@ class UserFirestore {
     }
 
     return User(
-        id: document.id,
-        pseudo: documentContent.pseudo,
-        avatar: documentContent.avatar,
-        score: documentContent.score,
+      id: document.id,
+      pseudo: documentContent.pseudo,
+      avatar: documentContent.avatar,
+      score: documentContent.score,
     );
   }
 
@@ -45,7 +45,8 @@ class UserFirestore {
   }
 
   Future<User?> findUserById(String userId) async {
-    DocumentSnapshot<User> document = await _userCollectionRef.doc(userId).get();
+    DocumentSnapshot<User> document =
+        await _userCollectionRef.doc(userId).get();
 
     return mapUserDocumentToUser(document);
   }
@@ -53,9 +54,9 @@ class UserFirestore {
   Future<List<User>> listUsers() async {
     QuerySnapshot<User> querySnapshot = await _userCollectionRef.get();
 
-    return querySnapshot
-        .docs
-        .map((queryDocumentSnapshot) => mapUserDocumentToUser(queryDocumentSnapshot)!)
+    return querySnapshot.docs
+        .map((queryDocumentSnapshot) =>
+            mapUserDocumentToUser(queryDocumentSnapshot)!)
         .toList();
   }
 }

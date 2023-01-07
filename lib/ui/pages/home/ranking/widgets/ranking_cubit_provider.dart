@@ -7,7 +7,9 @@ class RankingCubitProvider extends StatefulWidget {
   final BlocWidgetBuilder<RankingState> builder;
   final BlocWidgetListener<RankingState> listener;
 
-  const RankingCubitProvider({Key? key, required this.builder, required this.listener}) : super(key: key);
+  const RankingCubitProvider(
+      {Key? key, required this.builder, required this.listener})
+      : super(key: key);
 
   @override
   State<RankingCubitProvider> createState() => _RankingCubitProviderState();
@@ -18,12 +20,13 @@ class _RankingCubitProviderState extends State<RankingCubitProvider> {
 
   @override
   Widget build(BuildContext context) {
-    
     return RepositoryProvider<UserRepository>(
-        create: (_) => UserRepository.getInstance(),
+      create: (_) => UserRepository.getInstance(),
       child: BlocProvider<RankingCubit>(
         create: (cubitBuildContext) {
-          rankingCubit = RankingCubit(userRepository: RepositoryProvider.of<UserRepository>(cubitBuildContext));
+          rankingCubit = RankingCubit(
+              userRepository:
+                  RepositoryProvider.of<UserRepository>(cubitBuildContext));
 
           return rankingCubit!..loadUsers();
         },
@@ -33,7 +36,7 @@ class _RankingCubitProviderState extends State<RankingCubitProvider> {
         ),
       ),
     );
-    
+
     //   return RepositoryProvider<UserRepository>(
     //       create: (_) => UserRepository.getInstance(),
     //       child: BlocProvider<RankingCubit>(

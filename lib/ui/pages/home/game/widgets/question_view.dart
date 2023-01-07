@@ -26,7 +26,6 @@ class QuestionView extends StatefulWidget {
 class _QuestionViewState extends State<QuestionView> {
   @override
   Widget build(BuildContext context) {
-
     return Column(
       children: [
         Expanded(

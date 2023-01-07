@@ -1,6 +1,5 @@
 import 'package:clock/clock.dart';
 
-
 String getDateAsString() {
   DateTime today = clock.now();
   var month = today.month.toString().padLeft(2, '0');

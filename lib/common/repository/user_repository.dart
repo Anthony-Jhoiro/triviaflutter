@@ -46,7 +46,7 @@ class UserRepository {
     return appUser;
   }
 
-  Future<void> logout() async{
+  Future<void> logout() async {
     await _authFirebase.logout();
     this._currentUser = null;
   }

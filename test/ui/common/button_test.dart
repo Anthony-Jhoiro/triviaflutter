@@ -4,7 +4,6 @@ import 'package:triviaflutter/ui/common/button.dart';
 
 void main() {
   testWidgets("Button", (tester) async {
-
     final buttonText = "This is a button";
     var hasBeenPressed = false;
     await tester.pumpWidget(
@@ -24,6 +23,4 @@ void main() {
 
     expect(hasBeenPressed, true);
   });
-
-
 }
