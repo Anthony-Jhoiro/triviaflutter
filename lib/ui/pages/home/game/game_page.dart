@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:triviaflutter/common/models/question.dart';
 import 'package:triviaflutter/common/repository/question_repository.dart';
 import 'package:triviaflutter/ui/pages/home/game/bloc/game_cubit.dart';
 import 'package:triviaflutter/ui/pages/home/game/widgets/question_view.dart';
-
-import '../../../../common/models/question/question.dart';
 
 class GamePage extends StatefulWidget {
   const GamePage({Key? key}) : super(key: key);
@@ -36,10 +35,10 @@ class _GamePageState extends State<GamePage> {
         child: BlocConsumer<GameCubit, GameStatus>(
           listener: (context, state) {},
           builder: (context, state) {
-            if (state is QuestionSelected) {
+            if (state is QuestionSelected || state is AnswerSelected) {
               return QuestionView(
-                question: state.question,
-                answers: state.answers,
+                question: gameCubit!.question,
+                answers: gameCubit!.question.answers,
                 gameCubit: gameCubit!,
               );
             }

@@ -11,7 +11,7 @@ class AuthFirebase {
     return _instance ??= new AuthFirebase._();
   }
 
-  Future<String> sendVerificationCode(String phoneNumber) async  {
+  Future<String> sendVerificationCode(String phoneNumber) async {
     final completer = Completer<String>();
 
     await FirebaseAuth.instance.verifyPhoneNumber(
@@ -30,14 +30,16 @@ class AuthFirebase {
         // Skipped because automatic code validation is disabled
         return;
       },
-        timeout: const Duration(), // This disable automatic code validation
+      timeout: const Duration(), // This disable automatic code validation
     );
 
     return completer.future;
   }
 
-  Future<void> verifyVerificationCode(String verificationId, String smsCode) async  {
-    PhoneAuthCredential credential = PhoneAuthProvider.credential(verificationId: verificationId, smsCode: smsCode);
+  Future<void> verifyVerificationCode(
+      String verificationId, String smsCode) async {
+    PhoneAuthCredential credential = PhoneAuthProvider.credential(
+        verificationId: verificationId, smsCode: smsCode);
     await FirebaseAuth.instance.signInWithCredential(credential);
   }
 

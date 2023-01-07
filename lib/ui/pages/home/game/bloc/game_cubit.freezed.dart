@@ -22,9 +22,9 @@ mixin _$GameStatus {
     required TResult Function() loading,
     required TResult Function() questionsLoaded,
     required TResult Function(String message) error,
-    required TResult Function(Question question, List<String> answers)
-        questionSelected,
-    required TResult Function(Question question) answerSelected,
+    required TResult Function(Question question) questionSelected,
+    required TResult Function(Question question, String selectedAnswer)
+        answerSelected,
     required TResult Function(Question question) answerConfirmed,
     required TResult Function(Question question) wrongAnswer,
     required TResult Function(Question question) validAnswer,
@@ -36,8 +36,8 @@ mixin _$GameStatus {
     TResult Function()? loading,
     TResult Function()? questionsLoaded,
     TResult Function(String message)? error,
-    TResult Function(Question question, List<String> answers)? questionSelected,
-    TResult Function(Question question)? answerSelected,
+    TResult Function(Question question)? questionSelected,
+    TResult Function(Question question, String selectedAnswer)? answerSelected,
     TResult Function(Question question)? answerConfirmed,
     TResult Function(Question question)? wrongAnswer,
     TResult Function(Question question)? validAnswer,
@@ -49,8 +49,8 @@ mixin _$GameStatus {
     TResult Function()? loading,
     TResult Function()? questionsLoaded,
     TResult Function(String message)? error,
-    TResult Function(Question question, List<String> answers)? questionSelected,
-    TResult Function(Question question)? answerSelected,
+    TResult Function(Question question)? questionSelected,
+    TResult Function(Question question, String selectedAnswer)? answerSelected,
     TResult Function(Question question)? answerConfirmed,
     TResult Function(Question question)? wrongAnswer,
     TResult Function(Question question)? validAnswer,
@@ -157,9 +157,9 @@ class _$Initial implements Initial {
     required TResult Function() loading,
     required TResult Function() questionsLoaded,
     required TResult Function(String message) error,
-    required TResult Function(Question question, List<String> answers)
-        questionSelected,
-    required TResult Function(Question question) answerSelected,
+    required TResult Function(Question question) questionSelected,
+    required TResult Function(Question question, String selectedAnswer)
+        answerSelected,
     required TResult Function(Question question) answerConfirmed,
     required TResult Function(Question question) wrongAnswer,
     required TResult Function(Question question) validAnswer,
@@ -174,8 +174,8 @@ class _$Initial implements Initial {
     TResult Function()? loading,
     TResult Function()? questionsLoaded,
     TResult Function(String message)? error,
-    TResult Function(Question question, List<String> answers)? questionSelected,
-    TResult Function(Question question)? answerSelected,
+    TResult Function(Question question)? questionSelected,
+    TResult Function(Question question, String selectedAnswer)? answerSelected,
     TResult Function(Question question)? answerConfirmed,
     TResult Function(Question question)? wrongAnswer,
     TResult Function(Question question)? validAnswer,
@@ -190,8 +190,8 @@ class _$Initial implements Initial {
     TResult Function()? loading,
     TResult Function()? questionsLoaded,
     TResult Function(String message)? error,
-    TResult Function(Question question, List<String> answers)? questionSelected,
-    TResult Function(Question question)? answerSelected,
+    TResult Function(Question question)? questionSelected,
+    TResult Function(Question question, String selectedAnswer)? answerSelected,
     TResult Function(Question question)? answerConfirmed,
     TResult Function(Question question)? wrongAnswer,
     TResult Function(Question question)? validAnswer,
@@ -302,9 +302,9 @@ class _$Loading implements Loading {
     required TResult Function() loading,
     required TResult Function() questionsLoaded,
     required TResult Function(String message) error,
-    required TResult Function(Question question, List<String> answers)
-        questionSelected,
-    required TResult Function(Question question) answerSelected,
+    required TResult Function(Question question) questionSelected,
+    required TResult Function(Question question, String selectedAnswer)
+        answerSelected,
     required TResult Function(Question question) answerConfirmed,
     required TResult Function(Question question) wrongAnswer,
     required TResult Function(Question question) validAnswer,
@@ -319,8 +319,8 @@ class _$Loading implements Loading {
     TResult Function()? loading,
     TResult Function()? questionsLoaded,
     TResult Function(String message)? error,
-    TResult Function(Question question, List<String> answers)? questionSelected,
-    TResult Function(Question question)? answerSelected,
+    TResult Function(Question question)? questionSelected,
+    TResult Function(Question question, String selectedAnswer)? answerSelected,
     TResult Function(Question question)? answerConfirmed,
     TResult Function(Question question)? wrongAnswer,
     TResult Function(Question question)? validAnswer,
@@ -335,8 +335,8 @@ class _$Loading implements Loading {
     TResult Function()? loading,
     TResult Function()? questionsLoaded,
     TResult Function(String message)? error,
-    TResult Function(Question question, List<String> answers)? questionSelected,
-    TResult Function(Question question)? answerSelected,
+    TResult Function(Question question)? questionSelected,
+    TResult Function(Question question, String selectedAnswer)? answerSelected,
     TResult Function(Question question)? answerConfirmed,
     TResult Function(Question question)? wrongAnswer,
     TResult Function(Question question)? validAnswer,
@@ -450,9 +450,9 @@ class _$QuestionsLoaded implements QuestionsLoaded {
     required TResult Function() loading,
     required TResult Function() questionsLoaded,
     required TResult Function(String message) error,
-    required TResult Function(Question question, List<String> answers)
-        questionSelected,
-    required TResult Function(Question question) answerSelected,
+    required TResult Function(Question question) questionSelected,
+    required TResult Function(Question question, String selectedAnswer)
+        answerSelected,
     required TResult Function(Question question) answerConfirmed,
     required TResult Function(Question question) wrongAnswer,
     required TResult Function(Question question) validAnswer,
@@ -467,8 +467,8 @@ class _$QuestionsLoaded implements QuestionsLoaded {
     TResult Function()? loading,
     TResult Function()? questionsLoaded,
     TResult Function(String message)? error,
-    TResult Function(Question question, List<String> answers)? questionSelected,
-    TResult Function(Question question)? answerSelected,
+    TResult Function(Question question)? questionSelected,
+    TResult Function(Question question, String selectedAnswer)? answerSelected,
     TResult Function(Question question)? answerConfirmed,
     TResult Function(Question question)? wrongAnswer,
     TResult Function(Question question)? validAnswer,
@@ -483,8 +483,8 @@ class _$QuestionsLoaded implements QuestionsLoaded {
     TResult Function()? loading,
     TResult Function()? questionsLoaded,
     TResult Function(String message)? error,
-    TResult Function(Question question, List<String> answers)? questionSelected,
-    TResult Function(Question question)? answerSelected,
+    TResult Function(Question question)? questionSelected,
+    TResult Function(Question question, String selectedAnswer)? answerSelected,
     TResult Function(Question question)? answerConfirmed,
     TResult Function(Question question)? wrongAnswer,
     TResult Function(Question question)? validAnswer,
@@ -619,9 +619,9 @@ class _$Error implements Error {
     required TResult Function() loading,
     required TResult Function() questionsLoaded,
     required TResult Function(String message) error,
-    required TResult Function(Question question, List<String> answers)
-        questionSelected,
-    required TResult Function(Question question) answerSelected,
+    required TResult Function(Question question) questionSelected,
+    required TResult Function(Question question, String selectedAnswer)
+        answerSelected,
     required TResult Function(Question question) answerConfirmed,
     required TResult Function(Question question) wrongAnswer,
     required TResult Function(Question question) validAnswer,
@@ -636,8 +636,8 @@ class _$Error implements Error {
     TResult Function()? loading,
     TResult Function()? questionsLoaded,
     TResult Function(String message)? error,
-    TResult Function(Question question, List<String> answers)? questionSelected,
-    TResult Function(Question question)? answerSelected,
+    TResult Function(Question question)? questionSelected,
+    TResult Function(Question question, String selectedAnswer)? answerSelected,
     TResult Function(Question question)? answerConfirmed,
     TResult Function(Question question)? wrongAnswer,
     TResult Function(Question question)? validAnswer,
@@ -652,8 +652,8 @@ class _$Error implements Error {
     TResult Function()? loading,
     TResult Function()? questionsLoaded,
     TResult Function(String message)? error,
-    TResult Function(Question question, List<String> answers)? questionSelected,
-    TResult Function(Question question)? answerSelected,
+    TResult Function(Question question)? questionSelected,
+    TResult Function(Question question, String selectedAnswer)? answerSelected,
     TResult Function(Question question)? answerConfirmed,
     TResult Function(Question question)? wrongAnswer,
     TResult Function(Question question)? validAnswer,
@@ -731,9 +731,7 @@ abstract class _$$QuestionSelectedCopyWith<$Res> {
   factory _$$QuestionSelectedCopyWith(
           _$QuestionSelected value, $Res Function(_$QuestionSelected) then) =
       __$$QuestionSelectedCopyWithImpl<$Res>;
-  $Res call({Question question, List<String> answers});
-
-  $QuestionCopyWith<$Res> get question;
+  $Res call({Question question});
 }
 
 /// @nodoc
@@ -750,46 +748,27 @@ class __$$QuestionSelectedCopyWithImpl<$Res>
   @override
   $Res call({
     Object? question = freezed,
-    Object? answers = freezed,
   }) {
     return _then(_$QuestionSelected(
       question == freezed
           ? _value.question
           : question // ignore: cast_nullable_to_non_nullable
               as Question,
-      answers == freezed
-          ? _value._answers
-          : answers // ignore: cast_nullable_to_non_nullable
-              as List<String>,
     ));
-  }
-
-  @override
-  $QuestionCopyWith<$Res> get question {
-    return $QuestionCopyWith<$Res>(_value.question, (value) {
-      return _then(_value.copyWith(question: value));
-    });
   }
 }
 
 /// @nodoc
 
 class _$QuestionSelected implements QuestionSelected {
-  const _$QuestionSelected(this.question, final List<String> answers)
-      : _answers = answers;
+  const _$QuestionSelected(this.question);
 
   @override
   final Question question;
-  final List<String> _answers;
-  @override
-  List<String> get answers {
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_answers);
-  }
 
   @override
   String toString() {
-    return 'GameStatus.questionSelected(question: $question, answers: $answers)';
+    return 'GameStatus.questionSelected(question: $question)';
   }
 
   @override
@@ -797,15 +776,12 @@ class _$QuestionSelected implements QuestionSelected {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$QuestionSelected &&
-            const DeepCollectionEquality().equals(other.question, question) &&
-            const DeepCollectionEquality().equals(other._answers, _answers));
+            const DeepCollectionEquality().equals(other.question, question));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(question),
-      const DeepCollectionEquality().hash(_answers));
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(question));
 
   @JsonKey(ignore: true)
   @override
@@ -819,14 +795,14 @@ class _$QuestionSelected implements QuestionSelected {
     required TResult Function() loading,
     required TResult Function() questionsLoaded,
     required TResult Function(String message) error,
-    required TResult Function(Question question, List<String> answers)
-        questionSelected,
-    required TResult Function(Question question) answerSelected,
+    required TResult Function(Question question) questionSelected,
+    required TResult Function(Question question, String selectedAnswer)
+        answerSelected,
     required TResult Function(Question question) answerConfirmed,
     required TResult Function(Question question) wrongAnswer,
     required TResult Function(Question question) validAnswer,
   }) {
-    return questionSelected(question, answers);
+    return questionSelected(question);
   }
 
   @override
@@ -836,13 +812,13 @@ class _$QuestionSelected implements QuestionSelected {
     TResult Function()? loading,
     TResult Function()? questionsLoaded,
     TResult Function(String message)? error,
-    TResult Function(Question question, List<String> answers)? questionSelected,
-    TResult Function(Question question)? answerSelected,
+    TResult Function(Question question)? questionSelected,
+    TResult Function(Question question, String selectedAnswer)? answerSelected,
     TResult Function(Question question)? answerConfirmed,
     TResult Function(Question question)? wrongAnswer,
     TResult Function(Question question)? validAnswer,
   }) {
-    return questionSelected?.call(question, answers);
+    return questionSelected?.call(question);
   }
 
   @override
@@ -852,15 +828,15 @@ class _$QuestionSelected implements QuestionSelected {
     TResult Function()? loading,
     TResult Function()? questionsLoaded,
     TResult Function(String message)? error,
-    TResult Function(Question question, List<String> answers)? questionSelected,
-    TResult Function(Question question)? answerSelected,
+    TResult Function(Question question)? questionSelected,
+    TResult Function(Question question, String selectedAnswer)? answerSelected,
     TResult Function(Question question)? answerConfirmed,
     TResult Function(Question question)? wrongAnswer,
     TResult Function(Question question)? validAnswer,
     required TResult orElse(),
   }) {
     if (questionSelected != null) {
-      return questionSelected(question, answers);
+      return questionSelected(question);
     }
     return orElse();
   }
@@ -919,11 +895,9 @@ class _$QuestionSelected implements QuestionSelected {
 }
 
 abstract class QuestionSelected implements GameStatus {
-  const factory QuestionSelected(
-      final Question question, final List<String> answers) = _$QuestionSelected;
+  const factory QuestionSelected(final Question question) = _$QuestionSelected;
 
   Question get question;
-  List<String> get answers;
   @JsonKey(ignore: true)
   _$$QuestionSelectedCopyWith<_$QuestionSelected> get copyWith =>
       throw _privateConstructorUsedError;
@@ -934,9 +908,7 @@ abstract class _$$AnswerSelectedCopyWith<$Res> {
   factory _$$AnswerSelectedCopyWith(
           _$AnswerSelected value, $Res Function(_$AnswerSelected) then) =
       __$$AnswerSelectedCopyWithImpl<$Res>;
-  $Res call({Question question});
-
-  $QuestionCopyWith<$Res> get question;
+  $Res call({Question question, String selectedAnswer});
 }
 
 /// @nodoc
@@ -953,34 +925,34 @@ class __$$AnswerSelectedCopyWithImpl<$Res>
   @override
   $Res call({
     Object? question = freezed,
+    Object? selectedAnswer = freezed,
   }) {
     return _then(_$AnswerSelected(
       question == freezed
           ? _value.question
           : question // ignore: cast_nullable_to_non_nullable
               as Question,
+      selectedAnswer == freezed
+          ? _value.selectedAnswer
+          : selectedAnswer // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
-  }
-
-  @override
-  $QuestionCopyWith<$Res> get question {
-    return $QuestionCopyWith<$Res>(_value.question, (value) {
-      return _then(_value.copyWith(question: value));
-    });
   }
 }
 
 /// @nodoc
 
 class _$AnswerSelected implements AnswerSelected {
-  const _$AnswerSelected(this.question);
+  const _$AnswerSelected(this.question, this.selectedAnswer);
 
   @override
   final Question question;
+  @override
+  final String selectedAnswer;
 
   @override
   String toString() {
-    return 'GameStatus.answerSelected(question: $question)';
+    return 'GameStatus.answerSelected(question: $question, selectedAnswer: $selectedAnswer)';
   }
 
   @override
@@ -988,12 +960,16 @@ class _$AnswerSelected implements AnswerSelected {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AnswerSelected &&
-            const DeepCollectionEquality().equals(other.question, question));
+            const DeepCollectionEquality().equals(other.question, question) &&
+            const DeepCollectionEquality()
+                .equals(other.selectedAnswer, selectedAnswer));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(question));
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(question),
+      const DeepCollectionEquality().hash(selectedAnswer));
 
   @JsonKey(ignore: true)
   @override
@@ -1007,14 +983,14 @@ class _$AnswerSelected implements AnswerSelected {
     required TResult Function() loading,
     required TResult Function() questionsLoaded,
     required TResult Function(String message) error,
-    required TResult Function(Question question, List<String> answers)
-        questionSelected,
-    required TResult Function(Question question) answerSelected,
+    required TResult Function(Question question) questionSelected,
+    required TResult Function(Question question, String selectedAnswer)
+        answerSelected,
     required TResult Function(Question question) answerConfirmed,
     required TResult Function(Question question) wrongAnswer,
     required TResult Function(Question question) validAnswer,
   }) {
-    return answerSelected(question);
+    return answerSelected(question, selectedAnswer);
   }
 
   @override
@@ -1024,13 +1000,13 @@ class _$AnswerSelected implements AnswerSelected {
     TResult Function()? loading,
     TResult Function()? questionsLoaded,
     TResult Function(String message)? error,
-    TResult Function(Question question, List<String> answers)? questionSelected,
-    TResult Function(Question question)? answerSelected,
+    TResult Function(Question question)? questionSelected,
+    TResult Function(Question question, String selectedAnswer)? answerSelected,
     TResult Function(Question question)? answerConfirmed,
     TResult Function(Question question)? wrongAnswer,
     TResult Function(Question question)? validAnswer,
   }) {
-    return answerSelected?.call(question);
+    return answerSelected?.call(question, selectedAnswer);
   }
 
   @override
@@ -1040,15 +1016,15 @@ class _$AnswerSelected implements AnswerSelected {
     TResult Function()? loading,
     TResult Function()? questionsLoaded,
     TResult Function(String message)? error,
-    TResult Function(Question question, List<String> answers)? questionSelected,
-    TResult Function(Question question)? answerSelected,
+    TResult Function(Question question)? questionSelected,
+    TResult Function(Question question, String selectedAnswer)? answerSelected,
     TResult Function(Question question)? answerConfirmed,
     TResult Function(Question question)? wrongAnswer,
     TResult Function(Question question)? validAnswer,
     required TResult orElse(),
   }) {
     if (answerSelected != null) {
-      return answerSelected(question);
+      return answerSelected(question, selectedAnswer);
     }
     return orElse();
   }
@@ -1107,9 +1083,11 @@ class _$AnswerSelected implements AnswerSelected {
 }
 
 abstract class AnswerSelected implements GameStatus {
-  const factory AnswerSelected(final Question question) = _$AnswerSelected;
+  const factory AnswerSelected(
+      final Question question, final String selectedAnswer) = _$AnswerSelected;
 
   Question get question;
+  String get selectedAnswer;
   @JsonKey(ignore: true)
   _$$AnswerSelectedCopyWith<_$AnswerSelected> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1121,8 +1099,6 @@ abstract class _$$AnswerConfirmedCopyWith<$Res> {
           _$AnswerConfirmed value, $Res Function(_$AnswerConfirmed) then) =
       __$$AnswerConfirmedCopyWithImpl<$Res>;
   $Res call({Question question});
-
-  $QuestionCopyWith<$Res> get question;
 }
 
 /// @nodoc
@@ -1146,13 +1122,6 @@ class __$$AnswerConfirmedCopyWithImpl<$Res>
           : question // ignore: cast_nullable_to_non_nullable
               as Question,
     ));
-  }
-
-  @override
-  $QuestionCopyWith<$Res> get question {
-    return $QuestionCopyWith<$Res>(_value.question, (value) {
-      return _then(_value.copyWith(question: value));
-    });
   }
 }
 
@@ -1193,9 +1162,9 @@ class _$AnswerConfirmed implements AnswerConfirmed {
     required TResult Function() loading,
     required TResult Function() questionsLoaded,
     required TResult Function(String message) error,
-    required TResult Function(Question question, List<String> answers)
-        questionSelected,
-    required TResult Function(Question question) answerSelected,
+    required TResult Function(Question question) questionSelected,
+    required TResult Function(Question question, String selectedAnswer)
+        answerSelected,
     required TResult Function(Question question) answerConfirmed,
     required TResult Function(Question question) wrongAnswer,
     required TResult Function(Question question) validAnswer,
@@ -1210,8 +1179,8 @@ class _$AnswerConfirmed implements AnswerConfirmed {
     TResult Function()? loading,
     TResult Function()? questionsLoaded,
     TResult Function(String message)? error,
-    TResult Function(Question question, List<String> answers)? questionSelected,
-    TResult Function(Question question)? answerSelected,
+    TResult Function(Question question)? questionSelected,
+    TResult Function(Question question, String selectedAnswer)? answerSelected,
     TResult Function(Question question)? answerConfirmed,
     TResult Function(Question question)? wrongAnswer,
     TResult Function(Question question)? validAnswer,
@@ -1226,8 +1195,8 @@ class _$AnswerConfirmed implements AnswerConfirmed {
     TResult Function()? loading,
     TResult Function()? questionsLoaded,
     TResult Function(String message)? error,
-    TResult Function(Question question, List<String> answers)? questionSelected,
-    TResult Function(Question question)? answerSelected,
+    TResult Function(Question question)? questionSelected,
+    TResult Function(Question question, String selectedAnswer)? answerSelected,
     TResult Function(Question question)? answerConfirmed,
     TResult Function(Question question)? wrongAnswer,
     TResult Function(Question question)? validAnswer,
@@ -1307,8 +1276,6 @@ abstract class _$$WrongAnswerCopyWith<$Res> {
           _$WrongAnswer value, $Res Function(_$WrongAnswer) then) =
       __$$WrongAnswerCopyWithImpl<$Res>;
   $Res call({Question question});
-
-  $QuestionCopyWith<$Res> get question;
 }
 
 /// @nodoc
@@ -1331,13 +1298,6 @@ class __$$WrongAnswerCopyWithImpl<$Res> extends _$GameStatusCopyWithImpl<$Res>
           : question // ignore: cast_nullable_to_non_nullable
               as Question,
     ));
-  }
-
-  @override
-  $QuestionCopyWith<$Res> get question {
-    return $QuestionCopyWith<$Res>(_value.question, (value) {
-      return _then(_value.copyWith(question: value));
-    });
   }
 }
 
@@ -1378,9 +1338,9 @@ class _$WrongAnswer implements WrongAnswer {
     required TResult Function() loading,
     required TResult Function() questionsLoaded,
     required TResult Function(String message) error,
-    required TResult Function(Question question, List<String> answers)
-        questionSelected,
-    required TResult Function(Question question) answerSelected,
+    required TResult Function(Question question) questionSelected,
+    required TResult Function(Question question, String selectedAnswer)
+        answerSelected,
     required TResult Function(Question question) answerConfirmed,
     required TResult Function(Question question) wrongAnswer,
     required TResult Function(Question question) validAnswer,
@@ -1395,8 +1355,8 @@ class _$WrongAnswer implements WrongAnswer {
     TResult Function()? loading,
     TResult Function()? questionsLoaded,
     TResult Function(String message)? error,
-    TResult Function(Question question, List<String> answers)? questionSelected,
-    TResult Function(Question question)? answerSelected,
+    TResult Function(Question question)? questionSelected,
+    TResult Function(Question question, String selectedAnswer)? answerSelected,
     TResult Function(Question question)? answerConfirmed,
     TResult Function(Question question)? wrongAnswer,
     TResult Function(Question question)? validAnswer,
@@ -1411,8 +1371,8 @@ class _$WrongAnswer implements WrongAnswer {
     TResult Function()? loading,
     TResult Function()? questionsLoaded,
     TResult Function(String message)? error,
-    TResult Function(Question question, List<String> answers)? questionSelected,
-    TResult Function(Question question)? answerSelected,
+    TResult Function(Question question)? questionSelected,
+    TResult Function(Question question, String selectedAnswer)? answerSelected,
     TResult Function(Question question)? answerConfirmed,
     TResult Function(Question question)? wrongAnswer,
     TResult Function(Question question)? validAnswer,
@@ -1492,8 +1452,6 @@ abstract class _$$ValidAnswerCopyWith<$Res> {
           _$ValidAnswer value, $Res Function(_$ValidAnswer) then) =
       __$$ValidAnswerCopyWithImpl<$Res>;
   $Res call({Question question});
-
-  $QuestionCopyWith<$Res> get question;
 }
 
 /// @nodoc
@@ -1516,13 +1474,6 @@ class __$$ValidAnswerCopyWithImpl<$Res> extends _$GameStatusCopyWithImpl<$Res>
           : question // ignore: cast_nullable_to_non_nullable
               as Question,
     ));
-  }
-
-  @override
-  $QuestionCopyWith<$Res> get question {
-    return $QuestionCopyWith<$Res>(_value.question, (value) {
-      return _then(_value.copyWith(question: value));
-    });
   }
 }
 
@@ -1563,9 +1514,9 @@ class _$ValidAnswer implements ValidAnswer {
     required TResult Function() loading,
     required TResult Function() questionsLoaded,
     required TResult Function(String message) error,
-    required TResult Function(Question question, List<String> answers)
-        questionSelected,
-    required TResult Function(Question question) answerSelected,
+    required TResult Function(Question question) questionSelected,
+    required TResult Function(Question question, String selectedAnswer)
+        answerSelected,
     required TResult Function(Question question) answerConfirmed,
     required TResult Function(Question question) wrongAnswer,
     required TResult Function(Question question) validAnswer,
@@ -1580,8 +1531,8 @@ class _$ValidAnswer implements ValidAnswer {
     TResult Function()? loading,
     TResult Function()? questionsLoaded,
     TResult Function(String message)? error,
-    TResult Function(Question question, List<String> answers)? questionSelected,
-    TResult Function(Question question)? answerSelected,
+    TResult Function(Question question)? questionSelected,
+    TResult Function(Question question, String selectedAnswer)? answerSelected,
     TResult Function(Question question)? answerConfirmed,
     TResult Function(Question question)? wrongAnswer,
     TResult Function(Question question)? validAnswer,
@@ -1596,8 +1547,8 @@ class _$ValidAnswer implements ValidAnswer {
     TResult Function()? loading,
     TResult Function()? questionsLoaded,
     TResult Function(String message)? error,
-    TResult Function(Question question, List<String> answers)? questionSelected,
-    TResult Function(Question question)? answerSelected,
+    TResult Function(Question question)? questionSelected,
+    TResult Function(Question question, String selectedAnswer)? answerSelected,
     TResult Function(Question question)? answerConfirmed,
     TResult Function(Question question)? wrongAnswer,
     TResult Function(Question question)? validAnswer,

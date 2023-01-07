@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:html_unescape/html_unescape.dart';
 import 'package:swiping_card_deck/swiping_card_deck.dart';
+import 'package:triviaflutter/common/models/question.dart';
+import 'package:triviaflutter/ui/pages/home/game/bloc/game_cubit.dart';
 import 'package:triviaflutter/ui/pages/home/game/widgets/question_answer.dart';
-
-import '../../../../../common/models/question/question.dart';
-import '../bloc/game_cubit.dart';
 
 class QuestionView extends StatefulWidget {
   final Question question;
@@ -26,7 +25,6 @@ class QuestionView extends StatefulWidget {
 class _QuestionViewState extends State<QuestionView> {
   @override
   Widget build(BuildContext context) {
-
     return Column(
       children: [
         Expanded(
@@ -65,12 +63,24 @@ class _QuestionViewState extends State<QuestionView> {
         ),
         Expanded(
           child: Column(
-            children: widget.answers
-                .map((answer) => QuestionAnswer(
-                      onPress: () {},
-                      answer: HtmlUnescape().convert(answer),
-                    ))
-                .toList(),
+            children: widget.answers.map((answer) {
+              final state = widget.gameCubit.state;
+              final selected =
+                  state is AnswerSelected && state.selectedAnswer == answer;
+
+              return QuestionAnswer(
+                onPress: () {
+                  if (state is AnswerSelected &&
+                      state.selectedAnswer == answer) {
+                    widget.gameCubit.answerConfirmed(answer);
+                  } else {
+                    widget.gameCubit.selectAnswer(answer);
+                  }
+                },
+                answer: HtmlUnescape().convert(answer),
+                selected: selected,
+              );
+            }).toList(),
           ),
         ),
       ],

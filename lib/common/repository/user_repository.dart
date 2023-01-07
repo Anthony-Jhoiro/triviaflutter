@@ -1,7 +1,7 @@
 import 'package:triviaflutter/common/datasources/remote/user_firestore.dart';
 import 'package:triviaflutter/common/datasources/remote/auth_firebase.dart';
 
-import '../models/user/user.dart';
+import '../models/user.dart';
 
 class UserRepository {
   static UserRepository? _instance;
@@ -25,8 +25,8 @@ class UserRepository {
     return _userFirestore.findUserById(userId);
   }
 
-  Future<void> createUser(String userId, User user) async {
-    return _userFirestore.createUser(userId, user);
+  Future<void> createUser(User user) async {
+    return _userFirestore.createUser(user);
   }
 
   Future<User?> getCurrentUser() async {
@@ -46,12 +46,17 @@ class UserRepository {
     return appUser;
   }
 
-  Future<void> logout() async{
+  Future<void> logout() async {
     await _authFirebase.logout();
     this._currentUser = null;
   }
 
   Future<List<User>> listUsers() {
     return _userFirestore.listUsers();
+  }
+
+  Future<void> increaseScore(int amount) async {
+    _currentUser!.score += amount;
+    await _userFirestore.updateUser(_currentUser!);
   }
 }
