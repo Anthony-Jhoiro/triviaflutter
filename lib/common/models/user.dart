@@ -10,4 +10,18 @@ class User {
     required this.score,
     required this.avatar,
   });
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is User &&
+          runtimeType == other.runtimeType &&
+          id == other.id &&
+          pseudo == other.pseudo &&
+          score == other.score &&
+          avatar == other.avatar;
+
+  @override
+  int get hashCode =>
+      id.hashCode ^ pseudo.hashCode ^ score.hashCode ^ avatar.hashCode;
 }

@@ -8,7 +8,7 @@ class AuthFirebase {
   AuthFirebase._();
 
   static getInstance() {
-    return _instance ??= new AuthFirebase._();
+    return _instance ??= AuthFirebase._();
   }
 
   Future<String> sendVerificationCode(String phoneNumber) async {
@@ -37,9 +37,13 @@ class AuthFirebase {
   }
 
   Future<void> verifyVerificationCode(
-      String verificationId, String smsCode) async {
+    String verificationId,
+    String smsCode,
+  ) async {
     PhoneAuthCredential credential = PhoneAuthProvider.credential(
-        verificationId: verificationId, smsCode: smsCode);
+      verificationId: verificationId,
+      smsCode: smsCode,
+    );
     await FirebaseAuth.instance.signInWithCredential(credential);
   }
 

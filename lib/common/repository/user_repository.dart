@@ -9,7 +9,7 @@ class UserRepository {
   UserRepository._();
 
   static UserRepository getInstance() {
-    return _instance ??= new UserRepository._();
+    return _instance ??= UserRepository._();
   }
 
   final UserFirestore _userFirestore = UserFirestore.getInstance();

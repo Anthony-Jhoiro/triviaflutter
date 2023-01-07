@@ -3,13 +3,21 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:triviaflutter/common/repository/user_repository.dart';
 import 'package:triviaflutter/ui/pages/home/ranking/bloc/ranking_cubit.dart';
 
+typedef RankingCubitProviderBuilder = Widget Function(
+  RankingCubit cubit,
+  BuildContext context,
+  RankingState state,
+);
+
 class RankingCubitProvider extends StatefulWidget {
-  final BlocWidgetBuilder<RankingState> builder;
+  final RankingCubitProviderBuilder builder;
   final BlocWidgetListener<RankingState> listener;
 
-  const RankingCubitProvider(
-      {Key? key, required this.builder, required this.listener})
-      : super(key: key);
+  const RankingCubitProvider({
+    Key? key,
+    required this.builder,
+    required this.listener,
+  }) : super(key: key);
 
   @override
   State<RankingCubitProvider> createState() => _RankingCubitProviderState();
@@ -25,13 +33,15 @@ class _RankingCubitProviderState extends State<RankingCubitProvider> {
       child: BlocProvider<RankingCubit>(
         create: (cubitBuildContext) {
           rankingCubit = RankingCubit(
-              userRepository:
-                  RepositoryProvider.of<UserRepository>(cubitBuildContext));
+            userRepository:
+                RepositoryProvider.of<UserRepository>(cubitBuildContext),
+          );
 
-          return rankingCubit!..loadUsers();
+          return rankingCubit!..loadUsers("");
         },
         child: BlocConsumer<RankingCubit, RankingState>(
-          builder: widget.builder,
+          builder: (context, state) =>
+              widget.builder(rankingCubit!, context, state),
           listener: widget.listener,
         ),
       ),
