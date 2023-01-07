@@ -13,6 +13,8 @@ class UserDto with _$UserDto {
     required String? pseudo,
     required String? avatar,
     required int? score,
+    required String? lastAnswerDate,
+    required int? lastAnswerIndex,
   }) = _UserDto;
 
   /// Creates a User from Json map

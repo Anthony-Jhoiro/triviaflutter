@@ -59,7 +59,8 @@ class GameCubit extends Cubit<GameStatus> {
       emit(GameStatus.wrongAnswer(question));
     }
 
-    await questionRepository.increaseScore(getScoreFromQuestion(question));
+    await questionRepository.answerQuestion(
+        getScoreFromQuestion(question), questionIndex);
 
     Future.delayed(
       const Duration(seconds: 2),

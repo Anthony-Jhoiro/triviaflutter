@@ -10,6 +10,8 @@ _$_UserDto _$$_UserDtoFromJson(Map<String, dynamic> json) => _$_UserDto(
       pseudo: json['pseudo'] as String?,
       avatar: json['avatar'] as String?,
       score: json['score'] as int?,
+      lastAnswerDate: json['lastAnswerDate'] as String?,
+      lastAnswerIndex: json['lastAnswerIndex'] as int?,
     );
 
 Map<String, dynamic> _$$_UserDtoToJson(_$_UserDto instance) =>
@@ -17,4 +19,6 @@ Map<String, dynamic> _$$_UserDtoToJson(_$_UserDto instance) =>
       'pseudo': instance.pseudo,
       'avatar': instance.avatar,
       'score': instance.score,
+      'lastAnswerDate': instance.lastAnswerDate,
+      'lastAnswerIndex': instance.lastAnswerIndex,
     };
