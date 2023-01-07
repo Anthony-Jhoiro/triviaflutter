@@ -38,8 +38,7 @@ class SignupCubit extends Cubit<SignupState> {
       this.verificationId =
           await authRepository.sendVerificationCode(phoneNumber);
       emit(SignupState.phoneNumberVerificationCodeSent(verificationId));
-    } on FirebaseAuthException catch (err) {
-      print(err);
+    } on FirebaseAuthException {
       emit(SignupState.phoneNumberSubmitionError(
         "Envoie du code de vérification impossible, veuiller réessayer ulterieurement.",
       ));
@@ -61,7 +60,6 @@ class SignupCubit extends Cubit<SignupState> {
         emit(SignupState.loggedIn());
       }
     } catch (err) {
-      print(err);
       emit(SignupState.accountFetchingError(
         "Impossible de récupérer le compte, merci de réessayer ulterieurement.",
       ));
@@ -74,7 +72,7 @@ class SignupCubit extends Cubit<SignupState> {
     final uid = authRepository.getCurrentUserId()!;
     try {
       await userRepository.createUser(
-        new triviauser.User(
+        triviauser.User(
           id: uid,
           pseudo: username,
           avatar: "",
@@ -83,7 +81,6 @@ class SignupCubit extends Cubit<SignupState> {
       );
       emit(SignupState.loggedIn());
     } catch (err) {
-      print(err);
       emit(SignupState.accountCreationError(
         "Creation du compte impossible, merci de réessayer ulterieurement.",
       ));

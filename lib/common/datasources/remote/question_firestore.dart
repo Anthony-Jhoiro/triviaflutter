@@ -26,9 +26,6 @@ class QuestionFirebase {
   }
 
   Future<void> insertQuestions(QuestionDocumentDto questions) async {
-    print(questions);
-    print(getDateAsString());
-    print("dadada");
     await _questionRef.doc(getDateAsString()).set(questions);
 
     return;
