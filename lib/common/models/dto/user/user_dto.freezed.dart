@@ -23,6 +23,8 @@ mixin _$UserDto {
   String? get pseudo => throw _privateConstructorUsedError;
   String? get avatar => throw _privateConstructorUsedError;
   int? get score => throw _privateConstructorUsedError;
+  String? get lastAnswerDate => throw _privateConstructorUsedError;
+  int? get lastAnswerIndex => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -33,7 +35,12 @@ mixin _$UserDto {
 abstract class $UserDtoCopyWith<$Res> {
   factory $UserDtoCopyWith(UserDto value, $Res Function(UserDto) then) =
       _$UserDtoCopyWithImpl<$Res>;
-  $Res call({String? pseudo, String? avatar, int? score});
+  $Res call(
+      {String? pseudo,
+      String? avatar,
+      int? score,
+      String? lastAnswerDate,
+      int? lastAnswerIndex});
 }
 
 /// @nodoc
@@ -49,6 +56,8 @@ class _$UserDtoCopyWithImpl<$Res> implements $UserDtoCopyWith<$Res> {
     Object? pseudo = freezed,
     Object? avatar = freezed,
     Object? score = freezed,
+    Object? lastAnswerDate = freezed,
+    Object? lastAnswerIndex = freezed,
   }) {
     return _then(_value.copyWith(
       pseudo: pseudo == freezed
@@ -63,6 +72,14 @@ class _$UserDtoCopyWithImpl<$Res> implements $UserDtoCopyWith<$Res> {
           ? _value.score
           : score // ignore: cast_nullable_to_non_nullable
               as int?,
+      lastAnswerDate: lastAnswerDate == freezed
+          ? _value.lastAnswerDate
+          : lastAnswerDate // ignore: cast_nullable_to_non_nullable
+              as String?,
+      lastAnswerIndex: lastAnswerIndex == freezed
+          ? _value.lastAnswerIndex
+          : lastAnswerIndex // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -73,7 +90,12 @@ abstract class _$$_UserDtoCopyWith<$Res> implements $UserDtoCopyWith<$Res> {
           _$_UserDto value, $Res Function(_$_UserDto) then) =
       __$$_UserDtoCopyWithImpl<$Res>;
   @override
-  $Res call({String? pseudo, String? avatar, int? score});
+  $Res call(
+      {String? pseudo,
+      String? avatar,
+      int? score,
+      String? lastAnswerDate,
+      int? lastAnswerIndex});
 }
 
 /// @nodoc
@@ -90,6 +112,8 @@ class __$$_UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
     Object? pseudo = freezed,
     Object? avatar = freezed,
     Object? score = freezed,
+    Object? lastAnswerDate = freezed,
+    Object? lastAnswerIndex = freezed,
   }) {
     return _then(_$_UserDto(
       pseudo: pseudo == freezed
@@ -104,6 +128,14 @@ class __$$_UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
           ? _value.score
           : score // ignore: cast_nullable_to_non_nullable
               as int?,
+      lastAnswerDate: lastAnswerDate == freezed
+          ? _value.lastAnswerDate
+          : lastAnswerDate // ignore: cast_nullable_to_non_nullable
+              as String?,
+      lastAnswerIndex: lastAnswerIndex == freezed
+          ? _value.lastAnswerIndex
+          : lastAnswerIndex // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -112,7 +144,11 @@ class __$$_UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_UserDto implements _UserDto {
   const _$_UserDto(
-      {required this.pseudo, required this.avatar, required this.score});
+      {required this.pseudo,
+      required this.avatar,
+      required this.score,
+      required this.lastAnswerDate,
+      required this.lastAnswerIndex});
 
   factory _$_UserDto.fromJson(Map<String, dynamic> json) =>
       _$$_UserDtoFromJson(json);
@@ -123,10 +159,14 @@ class _$_UserDto implements _UserDto {
   final String? avatar;
   @override
   final int? score;
+  @override
+  final String? lastAnswerDate;
+  @override
+  final int? lastAnswerIndex;
 
   @override
   String toString() {
-    return 'UserDto(pseudo: $pseudo, avatar: $avatar, score: $score)';
+    return 'UserDto(pseudo: $pseudo, avatar: $avatar, score: $score, lastAnswerDate: $lastAnswerDate, lastAnswerIndex: $lastAnswerIndex)';
   }
 
   @override
@@ -136,7 +176,11 @@ class _$_UserDto implements _UserDto {
             other is _$_UserDto &&
             const DeepCollectionEquality().equals(other.pseudo, pseudo) &&
             const DeepCollectionEquality().equals(other.avatar, avatar) &&
-            const DeepCollectionEquality().equals(other.score, score));
+            const DeepCollectionEquality().equals(other.score, score) &&
+            const DeepCollectionEquality()
+                .equals(other.lastAnswerDate, lastAnswerDate) &&
+            const DeepCollectionEquality()
+                .equals(other.lastAnswerIndex, lastAnswerIndex));
   }
 
   @JsonKey(ignore: true)
@@ -145,7 +189,9 @@ class _$_UserDto implements _UserDto {
       runtimeType,
       const DeepCollectionEquality().hash(pseudo),
       const DeepCollectionEquality().hash(avatar),
-      const DeepCollectionEquality().hash(score));
+      const DeepCollectionEquality().hash(score),
+      const DeepCollectionEquality().hash(lastAnswerDate),
+      const DeepCollectionEquality().hash(lastAnswerIndex));
 
   @JsonKey(ignore: true)
   @override
@@ -164,7 +210,9 @@ abstract class _UserDto implements UserDto {
   const factory _UserDto(
       {required final String? pseudo,
       required final String? avatar,
-      required final int? score}) = _$_UserDto;
+      required final int? score,
+      required final String? lastAnswerDate,
+      required final int? lastAnswerIndex}) = _$_UserDto;
 
   factory _UserDto.fromJson(Map<String, dynamic> json) = _$_UserDto.fromJson;
 
@@ -174,6 +222,10 @@ abstract class _UserDto implements UserDto {
   String? get avatar;
   @override
   int? get score;
+  @override
+  String? get lastAnswerDate;
+  @override
+  int? get lastAnswerIndex;
   @override
   @JsonKey(ignore: true)
   _$$_UserDtoCopyWith<_$_UserDto> get copyWith =>

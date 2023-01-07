@@ -74,9 +74,14 @@ class UserRepository {
     _userStreamController.add(user);
   }
 
-  Future<void> increaseScore(int amount) async {
+  Future<void> answerQuestion(int questionScore, int questionIndex) async {
+    // The current date time is sent with 0 for the time attributes to make it easier to retrieve
+    final currentDateTime = DateTime.now();
     final newUser = _currentUser!.copyWith(
-      score: _currentUser!.score + amount,
+      score: _currentUser!.score + questionScore,
+      lastAnswerDate: DateTime(
+          currentDateTime.year, currentDateTime.month, currentDateTime.day),
+      lastAnswerIndex: questionIndex,
     );
     await _updateCurrentUser(newUser);
   }
