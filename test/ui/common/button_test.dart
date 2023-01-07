@@ -9,6 +9,7 @@ void main() {
     await tester.pumpWidget(
       MaterialApp(
         home: Button(
+          icon: Icons.sailing_sharp,
           onPressed: () {
             hasBeenPressed = true;
           },
