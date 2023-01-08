@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:triviaflutter/common/models/dto/question_dto/question_dto.dart';
 import 'package:http/http.dart' as http;
+import 'package:triviaflutter/common/models/dto/question_document_dto/question_document_dto.dart';
 
 class QuestionApi {
   final _baseUrl = "opentdb.com";
@@ -17,7 +17,7 @@ class QuestionApi {
     return _instance!;
   }
 
-  Future<List<QuestionDto>> getQuestionsOfTheDay() async {
+  Future<QuestionDocumentDto> getQuestionsOfTheDay() async {
     final queryParams = {
       'amount': _questionCount.toString(),
     };
@@ -27,12 +27,7 @@ class QuestionApi {
     final response = await http.get(uri);
 
     if (response.statusCode == 200) {
-      // I prefer this approach instead of creating another dto, because it
-      // saves to need of maintaining 3 files for exactly the same logic.
-
-      var questionsRaw = jsonDecode(response.body)['results'] as List;
-
-      return questionsRaw.map((e) => QuestionDto.fromJson(e)).toList();
+      return QuestionDocumentDto.fromJson(jsonDecode(response.body));
     }
     throw Error();
   }

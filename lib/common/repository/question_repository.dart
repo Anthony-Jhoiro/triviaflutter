@@ -1,10 +1,9 @@
+import 'package:meta/meta.dart';
 import 'package:triviaflutter/common/datasources/remote/question_api.dart';
 import 'package:triviaflutter/common/datasources/remote/question_firestore.dart';
-import 'package:triviaflutter/common/models/dto/question_document_dto/question_document_dto.dart';
 import 'package:triviaflutter/common/models/dto/question_dto/question_dto.dart';
 import 'package:triviaflutter/common/models/question.dart';
 import 'package:triviaflutter/common/repository/user_repository.dart';
-import 'package:meta/meta.dart';
 
 import '../../core/tools/date_utils.dart';
 
@@ -71,11 +70,10 @@ class QuestionRepository {
           .toList();
     }
 
-    var newQuestions = await _question_api.getQuestionsOfTheDay();
-    await _question_firebase
-        .insertQuestions(QuestionDocumentDto(results: newQuestions));
+    final newQuestionDocument = await _question_api.getQuestionsOfTheDay();
+    await _question_firebase.insertQuestions(newQuestionDocument);
 
-    return newQuestions
+    return newQuestionDocument.results
         .sublist(spliceIndex)
         .map(QuestionRepository.questionFromDto)
         .toList();
