@@ -1,0 +1,198 @@
+{
+  "project_info": {
+    "project_number": "884902095592",
+    "project_id": "trivia-class-d2d55",
+    "storage_bucket": "trivia-class-d2d55.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:884902095592:android:21284ad3f4d030702df75d",
+        "android_client_info": {
+          "package_name": "com.example.trivial_pursuit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "884902095592-hupb264ap0bldobee589dvi8u2jd19fs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYtSQWf8DqRZCjG87jmQjye35ooO2fdsE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "884902095592-hupb264ap0bldobee589dvi8u2jd19fs.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "884902095592-tctmmm55au00a1preu5ovg0s5j2setu0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.trivialPursuitSixTristanGobertMartin"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:884902095592:android:1fe1a2332395ea4c2df75d",
+        "android_client_info": {
+          "package_name": "com.example.trivial_pursuit.prod"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "884902095592-hupb264ap0bldobee589dvi8u2jd19fs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYtSQWf8DqRZCjG87jmQjye35ooO2fdsE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "884902095592-hupb264ap0bldobee589dvi8u2jd19fs.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "884902095592-tctmmm55au00a1preu5ovg0s5j2setu0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.trivialPursuitSixTristanGobertMartin"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:884902095592:android:13d1e38f0c487ac52df75d",
+        "android_client_info": {
+          "package_name": "com.example.trivial_pursuit_six_tristan_gobert_martin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "884902095592-hupb264ap0bldobee589dvi8u2jd19fs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYtSQWf8DqRZCjG87jmQjye35ooO2fdsE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "884902095592-hupb264ap0bldobee589dvi8u2jd19fs.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "884902095592-tctmmm55au00a1preu5ovg0s5j2setu0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.trivialPursuitSixTristanGobertMartin"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:884902095592:android:9079fafad85d7ade2df75d",
+        "android_client_info": {
+          "package_name": "com.trivia.triviaflutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "884902095592-gpoapis6on7c3tflgpfsa2ponh162ri9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.trivia.triviaflutter",
+            "certificate_hash": "c3b186a9ba85e0f483d41e00b836086fab9ab5e5"
+          }
+        },
+        {
+          "client_id": "884902095592-hupb264ap0bldobee589dvi8u2jd19fs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYtSQWf8DqRZCjG87jmQjye35ooO2fdsE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "884902095592-hupb264ap0bldobee589dvi8u2jd19fs.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "884902095592-tctmmm55au00a1preu5ovg0s5j2setu0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.trivialPursuitSixTristanGobertMartin"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:884902095592:android:a736159e807f49502df75d",
+        "android_client_info": {
+          "package_name": "com.trivia.triviaflutter.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "884902095592-hupb264ap0bldobee589dvi8u2jd19fs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYtSQWf8DqRZCjG87jmQjye35ooO2fdsE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "884902095592-hupb264ap0bldobee589dvi8u2jd19fs.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "884902095592-tctmmm55au00a1preu5ovg0s5j2setu0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.trivialPursuitSixTristanGobertMartin"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
