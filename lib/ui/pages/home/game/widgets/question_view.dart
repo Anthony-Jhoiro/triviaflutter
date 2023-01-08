@@ -4,81 +4,90 @@ import 'package:swiping_card_deck/swiping_card_deck.dart';
 import 'package:triviaflutter/common/models/question.dart';
 import 'package:triviaflutter/ui/pages/home/game/bloc/game_cubit.dart';
 import 'package:triviaflutter/ui/pages/home/game/widgets/question_answer.dart';
+import 'package:triviaflutter/ui/pages/home/game/widgets/question_card.dart';
 
-class QuestionView extends StatefulWidget {
+class QuestionView extends StatelessWidget {
   final Question question;
   final List<String> answers;
-
   final GameCubit gameCubit;
 
-  const QuestionView({
+  QuestionView({
     Key? key,
     required this.question,
     required this.gameCubit,
     required this.answers,
   }) : super(key: key);
 
-  @override
-  State<QuestionView> createState() => _QuestionViewState();
-}
+  SwipingCardDeck buildDeck(BuildContext context) {
+    return SwipingCardDeck(
+      cardDeck: [
+        Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15.0),
+          ),
+          elevation: 8,
+          child: SizedBox(
+            width: 250,
+            child: QuestionCardContent(question: question.question),
+          ),
+        ),
+      ],
+      onLeftSwipe: (Card) {
+        return;
+      },
+      onRightSwipe: (Card) {
+        return;
+      },
+      onDeckEmpty: () {
+        return;
+      },
+      cardWidth: 250,
+      swipeThreshold: MediaQuery.of(context).size.width / 3,
+      minimumVelocity: 1000,
+      rotationFactor: 0.8 / 3.14,
+      swipeAnimationDuration: const Duration(milliseconds: 500),
+    );
+  }
 
-class _QuestionViewState extends State<QuestionView> {
   @override
   Widget build(BuildContext context) {
+    final deck = buildDeck(context);
+
     return Column(
       children: [
         Expanded(
-          child: Center(
-            child: Padding(
-              padding: EdgeInsets.all(MediaQuery.of(context).size.width / 12),
-              child: SwipingCardDeck(
-                cardWidth: MediaQuery.of(context).size.width * 0.83,
-                cardDeck: [
-                  Card(
-                    child: Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: Center(
-                        child: Text(
-                          HtmlUnescape().convert(widget.question.question),
-                          style: TextStyle(
-                            fontSize: 16.0,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-                onLeftSwipe: (Card) {
-                  widget.gameCubit.nextQuestion();
-                },
-                onRightSwipe: (Card) {
-                  widget.gameCubit.nextQuestion();
-                },
-                onDeckEmpty: () {
-                  return;
-                },
-              ),
-            ),
-          ),
+          child: deck,
         ),
         Expanded(
           child: Column(
-            children: widget.answers.map((answer) {
-              final state = widget.gameCubit.state;
+            children: answers.map((answer) {
+              final state = gameCubit.state;
               final selected =
                   state is AnswerSelected && state.selectedAnswer == answer;
 
+              final showAnswers = state is ValidAnswer || state is WrongAnswer;
+
+              final bool isRightAnswer =
+                  gameCubit.question.correct_answer == answer;
+
               return QuestionAnswer(
-                onPress: () {
+                onPress: () async {
                   if (state is AnswerSelected &&
                       state.selectedAnswer == answer) {
-                    widget.gameCubit.answerConfirmed(answer);
+                    if (gameCubit.question.correct_answer == answer) {
+                      await deck.swipeRight();
+                    } else {
+                      await deck.swipeLeft();
+                    }
+                    this.gameCubit.answerConfirmed(answer);
                   } else {
-                    widget.gameCubit.selectAnswer(answer);
+                    this.gameCubit.selectAnswer(answer);
                   }
                 },
                 answer: HtmlUnescape().convert(answer),
                 selected: selected,
+                isRightAnswer: isRightAnswer,
+                showAnswer: showAnswers,
               );
             }).toList(),
           ),

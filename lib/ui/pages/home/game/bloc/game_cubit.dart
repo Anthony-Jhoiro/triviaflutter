@@ -28,7 +28,7 @@ class GameCubit extends Cubit<GameStatus> {
   Future<void> nextQuestion() async {
     questionIndex += 1;
     if (questionIndex == questions.length) {
-      emit(GameStatus.loading()); // TODO : change that
+      emit(GameStatus.noMoreQuestions());
 
       return;
     }
@@ -60,7 +60,9 @@ class GameCubit extends Cubit<GameStatus> {
     }
 
     await questionRepository.answerQuestion(
-        getScoreFromQuestion(question), questionIndex);
+      getScoreFromQuestion(question),
+      questionIndex,
+    );
 
     Future.delayed(
       const Duration(seconds: 2),

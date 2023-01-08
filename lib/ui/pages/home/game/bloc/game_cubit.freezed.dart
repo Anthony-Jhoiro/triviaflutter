@@ -28,6 +28,7 @@ mixin _$GameStatus {
     required TResult Function(Question question) answerConfirmed,
     required TResult Function(Question question) wrongAnswer,
     required TResult Function(Question question) validAnswer,
+    required TResult Function() noMoreQuestions,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -41,6 +42,7 @@ mixin _$GameStatus {
     TResult Function(Question question)? answerConfirmed,
     TResult Function(Question question)? wrongAnswer,
     TResult Function(Question question)? validAnswer,
+    TResult Function()? noMoreQuestions,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -54,6 +56,7 @@ mixin _$GameStatus {
     TResult Function(Question question)? answerConfirmed,
     TResult Function(Question question)? wrongAnswer,
     TResult Function(Question question)? validAnswer,
+    TResult Function()? noMoreQuestions,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -68,6 +71,7 @@ mixin _$GameStatus {
     required TResult Function(AnswerConfirmed value) answerConfirmed,
     required TResult Function(WrongAnswer value) wrongAnswer,
     required TResult Function(ValidAnswer value) validAnswer,
+    required TResult Function(NoMoreQuestions value) noMoreQuestions,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -81,6 +85,7 @@ mixin _$GameStatus {
     TResult Function(AnswerConfirmed value)? answerConfirmed,
     TResult Function(WrongAnswer value)? wrongAnswer,
     TResult Function(ValidAnswer value)? validAnswer,
+    TResult Function(NoMoreQuestions value)? noMoreQuestions,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -94,6 +99,7 @@ mixin _$GameStatus {
     TResult Function(AnswerConfirmed value)? answerConfirmed,
     TResult Function(WrongAnswer value)? wrongAnswer,
     TResult Function(ValidAnswer value)? validAnswer,
+    TResult Function(NoMoreQuestions value)? noMoreQuestions,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -163,6 +169,7 @@ class _$Initial implements Initial {
     required TResult Function(Question question) answerConfirmed,
     required TResult Function(Question question) wrongAnswer,
     required TResult Function(Question question) validAnswer,
+    required TResult Function() noMoreQuestions,
   }) {
     return initial();
   }
@@ -179,6 +186,7 @@ class _$Initial implements Initial {
     TResult Function(Question question)? answerConfirmed,
     TResult Function(Question question)? wrongAnswer,
     TResult Function(Question question)? validAnswer,
+    TResult Function()? noMoreQuestions,
   }) {
     return initial?.call();
   }
@@ -195,6 +203,7 @@ class _$Initial implements Initial {
     TResult Function(Question question)? answerConfirmed,
     TResult Function(Question question)? wrongAnswer,
     TResult Function(Question question)? validAnswer,
+    TResult Function()? noMoreQuestions,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -215,6 +224,7 @@ class _$Initial implements Initial {
     required TResult Function(AnswerConfirmed value) answerConfirmed,
     required TResult Function(WrongAnswer value) wrongAnswer,
     required TResult Function(ValidAnswer value) validAnswer,
+    required TResult Function(NoMoreQuestions value) noMoreQuestions,
   }) {
     return initial(this);
   }
@@ -231,6 +241,7 @@ class _$Initial implements Initial {
     TResult Function(AnswerConfirmed value)? answerConfirmed,
     TResult Function(WrongAnswer value)? wrongAnswer,
     TResult Function(ValidAnswer value)? validAnswer,
+    TResult Function(NoMoreQuestions value)? noMoreQuestions,
   }) {
     return initial?.call(this);
   }
@@ -247,6 +258,7 @@ class _$Initial implements Initial {
     TResult Function(AnswerConfirmed value)? answerConfirmed,
     TResult Function(WrongAnswer value)? wrongAnswer,
     TResult Function(ValidAnswer value)? validAnswer,
+    TResult Function(NoMoreQuestions value)? noMoreQuestions,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -308,6 +320,7 @@ class _$Loading implements Loading {
     required TResult Function(Question question) answerConfirmed,
     required TResult Function(Question question) wrongAnswer,
     required TResult Function(Question question) validAnswer,
+    required TResult Function() noMoreQuestions,
   }) {
     return loading();
   }
@@ -324,6 +337,7 @@ class _$Loading implements Loading {
     TResult Function(Question question)? answerConfirmed,
     TResult Function(Question question)? wrongAnswer,
     TResult Function(Question question)? validAnswer,
+    TResult Function()? noMoreQuestions,
   }) {
     return loading?.call();
   }
@@ -340,6 +354,7 @@ class _$Loading implements Loading {
     TResult Function(Question question)? answerConfirmed,
     TResult Function(Question question)? wrongAnswer,
     TResult Function(Question question)? validAnswer,
+    TResult Function()? noMoreQuestions,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -360,6 +375,7 @@ class _$Loading implements Loading {
     required TResult Function(AnswerConfirmed value) answerConfirmed,
     required TResult Function(WrongAnswer value) wrongAnswer,
     required TResult Function(ValidAnswer value) validAnswer,
+    required TResult Function(NoMoreQuestions value) noMoreQuestions,
   }) {
     return loading(this);
   }
@@ -376,6 +392,7 @@ class _$Loading implements Loading {
     TResult Function(AnswerConfirmed value)? answerConfirmed,
     TResult Function(WrongAnswer value)? wrongAnswer,
     TResult Function(ValidAnswer value)? validAnswer,
+    TResult Function(NoMoreQuestions value)? noMoreQuestions,
   }) {
     return loading?.call(this);
   }
@@ -392,6 +409,7 @@ class _$Loading implements Loading {
     TResult Function(AnswerConfirmed value)? answerConfirmed,
     TResult Function(WrongAnswer value)? wrongAnswer,
     TResult Function(ValidAnswer value)? validAnswer,
+    TResult Function(NoMoreQuestions value)? noMoreQuestions,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -456,6 +474,7 @@ class _$QuestionsLoaded implements QuestionsLoaded {
     required TResult Function(Question question) answerConfirmed,
     required TResult Function(Question question) wrongAnswer,
     required TResult Function(Question question) validAnswer,
+    required TResult Function() noMoreQuestions,
   }) {
     return questionsLoaded();
   }
@@ -472,6 +491,7 @@ class _$QuestionsLoaded implements QuestionsLoaded {
     TResult Function(Question question)? answerConfirmed,
     TResult Function(Question question)? wrongAnswer,
     TResult Function(Question question)? validAnswer,
+    TResult Function()? noMoreQuestions,
   }) {
     return questionsLoaded?.call();
   }
@@ -488,6 +508,7 @@ class _$QuestionsLoaded implements QuestionsLoaded {
     TResult Function(Question question)? answerConfirmed,
     TResult Function(Question question)? wrongAnswer,
     TResult Function(Question question)? validAnswer,
+    TResult Function()? noMoreQuestions,
     required TResult orElse(),
   }) {
     if (questionsLoaded != null) {
@@ -508,6 +529,7 @@ class _$QuestionsLoaded implements QuestionsLoaded {
     required TResult Function(AnswerConfirmed value) answerConfirmed,
     required TResult Function(WrongAnswer value) wrongAnswer,
     required TResult Function(ValidAnswer value) validAnswer,
+    required TResult Function(NoMoreQuestions value) noMoreQuestions,
   }) {
     return questionsLoaded(this);
   }
@@ -524,6 +546,7 @@ class _$QuestionsLoaded implements QuestionsLoaded {
     TResult Function(AnswerConfirmed value)? answerConfirmed,
     TResult Function(WrongAnswer value)? wrongAnswer,
     TResult Function(ValidAnswer value)? validAnswer,
+    TResult Function(NoMoreQuestions value)? noMoreQuestions,
   }) {
     return questionsLoaded?.call(this);
   }
@@ -540,6 +563,7 @@ class _$QuestionsLoaded implements QuestionsLoaded {
     TResult Function(AnswerConfirmed value)? answerConfirmed,
     TResult Function(WrongAnswer value)? wrongAnswer,
     TResult Function(ValidAnswer value)? validAnswer,
+    TResult Function(NoMoreQuestions value)? noMoreQuestions,
     required TResult orElse(),
   }) {
     if (questionsLoaded != null) {
@@ -625,6 +649,7 @@ class _$Error implements Error {
     required TResult Function(Question question) answerConfirmed,
     required TResult Function(Question question) wrongAnswer,
     required TResult Function(Question question) validAnswer,
+    required TResult Function() noMoreQuestions,
   }) {
     return error(message);
   }
@@ -641,6 +666,7 @@ class _$Error implements Error {
     TResult Function(Question question)? answerConfirmed,
     TResult Function(Question question)? wrongAnswer,
     TResult Function(Question question)? validAnswer,
+    TResult Function()? noMoreQuestions,
   }) {
     return error?.call(message);
   }
@@ -657,6 +683,7 @@ class _$Error implements Error {
     TResult Function(Question question)? answerConfirmed,
     TResult Function(Question question)? wrongAnswer,
     TResult Function(Question question)? validAnswer,
+    TResult Function()? noMoreQuestions,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -677,6 +704,7 @@ class _$Error implements Error {
     required TResult Function(AnswerConfirmed value) answerConfirmed,
     required TResult Function(WrongAnswer value) wrongAnswer,
     required TResult Function(ValidAnswer value) validAnswer,
+    required TResult Function(NoMoreQuestions value) noMoreQuestions,
   }) {
     return error(this);
   }
@@ -693,6 +721,7 @@ class _$Error implements Error {
     TResult Function(AnswerConfirmed value)? answerConfirmed,
     TResult Function(WrongAnswer value)? wrongAnswer,
     TResult Function(ValidAnswer value)? validAnswer,
+    TResult Function(NoMoreQuestions value)? noMoreQuestions,
   }) {
     return error?.call(this);
   }
@@ -709,6 +738,7 @@ class _$Error implements Error {
     TResult Function(AnswerConfirmed value)? answerConfirmed,
     TResult Function(WrongAnswer value)? wrongAnswer,
     TResult Function(ValidAnswer value)? validAnswer,
+    TResult Function(NoMoreQuestions value)? noMoreQuestions,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -801,6 +831,7 @@ class _$QuestionSelected implements QuestionSelected {
     required TResult Function(Question question) answerConfirmed,
     required TResult Function(Question question) wrongAnswer,
     required TResult Function(Question question) validAnswer,
+    required TResult Function() noMoreQuestions,
   }) {
     return questionSelected(question);
   }
@@ -817,6 +848,7 @@ class _$QuestionSelected implements QuestionSelected {
     TResult Function(Question question)? answerConfirmed,
     TResult Function(Question question)? wrongAnswer,
     TResult Function(Question question)? validAnswer,
+    TResult Function()? noMoreQuestions,
   }) {
     return questionSelected?.call(question);
   }
@@ -833,6 +865,7 @@ class _$QuestionSelected implements QuestionSelected {
     TResult Function(Question question)? answerConfirmed,
     TResult Function(Question question)? wrongAnswer,
     TResult Function(Question question)? validAnswer,
+    TResult Function()? noMoreQuestions,
     required TResult orElse(),
   }) {
     if (questionSelected != null) {
@@ -853,6 +886,7 @@ class _$QuestionSelected implements QuestionSelected {
     required TResult Function(AnswerConfirmed value) answerConfirmed,
     required TResult Function(WrongAnswer value) wrongAnswer,
     required TResult Function(ValidAnswer value) validAnswer,
+    required TResult Function(NoMoreQuestions value) noMoreQuestions,
   }) {
     return questionSelected(this);
   }
@@ -869,6 +903,7 @@ class _$QuestionSelected implements QuestionSelected {
     TResult Function(AnswerConfirmed value)? answerConfirmed,
     TResult Function(WrongAnswer value)? wrongAnswer,
     TResult Function(ValidAnswer value)? validAnswer,
+    TResult Function(NoMoreQuestions value)? noMoreQuestions,
   }) {
     return questionSelected?.call(this);
   }
@@ -885,6 +920,7 @@ class _$QuestionSelected implements QuestionSelected {
     TResult Function(AnswerConfirmed value)? answerConfirmed,
     TResult Function(WrongAnswer value)? wrongAnswer,
     TResult Function(ValidAnswer value)? validAnswer,
+    TResult Function(NoMoreQuestions value)? noMoreQuestions,
     required TResult orElse(),
   }) {
     if (questionSelected != null) {
@@ -989,6 +1025,7 @@ class _$AnswerSelected implements AnswerSelected {
     required TResult Function(Question question) answerConfirmed,
     required TResult Function(Question question) wrongAnswer,
     required TResult Function(Question question) validAnswer,
+    required TResult Function() noMoreQuestions,
   }) {
     return answerSelected(question, selectedAnswer);
   }
@@ -1005,6 +1042,7 @@ class _$AnswerSelected implements AnswerSelected {
     TResult Function(Question question)? answerConfirmed,
     TResult Function(Question question)? wrongAnswer,
     TResult Function(Question question)? validAnswer,
+    TResult Function()? noMoreQuestions,
   }) {
     return answerSelected?.call(question, selectedAnswer);
   }
@@ -1021,6 +1059,7 @@ class _$AnswerSelected implements AnswerSelected {
     TResult Function(Question question)? answerConfirmed,
     TResult Function(Question question)? wrongAnswer,
     TResult Function(Question question)? validAnswer,
+    TResult Function()? noMoreQuestions,
     required TResult orElse(),
   }) {
     if (answerSelected != null) {
@@ -1041,6 +1080,7 @@ class _$AnswerSelected implements AnswerSelected {
     required TResult Function(AnswerConfirmed value) answerConfirmed,
     required TResult Function(WrongAnswer value) wrongAnswer,
     required TResult Function(ValidAnswer value) validAnswer,
+    required TResult Function(NoMoreQuestions value) noMoreQuestions,
   }) {
     return answerSelected(this);
   }
@@ -1057,6 +1097,7 @@ class _$AnswerSelected implements AnswerSelected {
     TResult Function(AnswerConfirmed value)? answerConfirmed,
     TResult Function(WrongAnswer value)? wrongAnswer,
     TResult Function(ValidAnswer value)? validAnswer,
+    TResult Function(NoMoreQuestions value)? noMoreQuestions,
   }) {
     return answerSelected?.call(this);
   }
@@ -1073,6 +1114,7 @@ class _$AnswerSelected implements AnswerSelected {
     TResult Function(AnswerConfirmed value)? answerConfirmed,
     TResult Function(WrongAnswer value)? wrongAnswer,
     TResult Function(ValidAnswer value)? validAnswer,
+    TResult Function(NoMoreQuestions value)? noMoreQuestions,
     required TResult orElse(),
   }) {
     if (answerSelected != null) {
@@ -1168,6 +1210,7 @@ class _$AnswerConfirmed implements AnswerConfirmed {
     required TResult Function(Question question) answerConfirmed,
     required TResult Function(Question question) wrongAnswer,
     required TResult Function(Question question) validAnswer,
+    required TResult Function() noMoreQuestions,
   }) {
     return answerConfirmed(question);
   }
@@ -1184,6 +1227,7 @@ class _$AnswerConfirmed implements AnswerConfirmed {
     TResult Function(Question question)? answerConfirmed,
     TResult Function(Question question)? wrongAnswer,
     TResult Function(Question question)? validAnswer,
+    TResult Function()? noMoreQuestions,
   }) {
     return answerConfirmed?.call(question);
   }
@@ -1200,6 +1244,7 @@ class _$AnswerConfirmed implements AnswerConfirmed {
     TResult Function(Question question)? answerConfirmed,
     TResult Function(Question question)? wrongAnswer,
     TResult Function(Question question)? validAnswer,
+    TResult Function()? noMoreQuestions,
     required TResult orElse(),
   }) {
     if (answerConfirmed != null) {
@@ -1220,6 +1265,7 @@ class _$AnswerConfirmed implements AnswerConfirmed {
     required TResult Function(AnswerConfirmed value) answerConfirmed,
     required TResult Function(WrongAnswer value) wrongAnswer,
     required TResult Function(ValidAnswer value) validAnswer,
+    required TResult Function(NoMoreQuestions value) noMoreQuestions,
   }) {
     return answerConfirmed(this);
   }
@@ -1236,6 +1282,7 @@ class _$AnswerConfirmed implements AnswerConfirmed {
     TResult Function(AnswerConfirmed value)? answerConfirmed,
     TResult Function(WrongAnswer value)? wrongAnswer,
     TResult Function(ValidAnswer value)? validAnswer,
+    TResult Function(NoMoreQuestions value)? noMoreQuestions,
   }) {
     return answerConfirmed?.call(this);
   }
@@ -1252,6 +1299,7 @@ class _$AnswerConfirmed implements AnswerConfirmed {
     TResult Function(AnswerConfirmed value)? answerConfirmed,
     TResult Function(WrongAnswer value)? wrongAnswer,
     TResult Function(ValidAnswer value)? validAnswer,
+    TResult Function(NoMoreQuestions value)? noMoreQuestions,
     required TResult orElse(),
   }) {
     if (answerConfirmed != null) {
@@ -1344,6 +1392,7 @@ class _$WrongAnswer implements WrongAnswer {
     required TResult Function(Question question) answerConfirmed,
     required TResult Function(Question question) wrongAnswer,
     required TResult Function(Question question) validAnswer,
+    required TResult Function() noMoreQuestions,
   }) {
     return wrongAnswer(question);
   }
@@ -1360,6 +1409,7 @@ class _$WrongAnswer implements WrongAnswer {
     TResult Function(Question question)? answerConfirmed,
     TResult Function(Question question)? wrongAnswer,
     TResult Function(Question question)? validAnswer,
+    TResult Function()? noMoreQuestions,
   }) {
     return wrongAnswer?.call(question);
   }
@@ -1376,6 +1426,7 @@ class _$WrongAnswer implements WrongAnswer {
     TResult Function(Question question)? answerConfirmed,
     TResult Function(Question question)? wrongAnswer,
     TResult Function(Question question)? validAnswer,
+    TResult Function()? noMoreQuestions,
     required TResult orElse(),
   }) {
     if (wrongAnswer != null) {
@@ -1396,6 +1447,7 @@ class _$WrongAnswer implements WrongAnswer {
     required TResult Function(AnswerConfirmed value) answerConfirmed,
     required TResult Function(WrongAnswer value) wrongAnswer,
     required TResult Function(ValidAnswer value) validAnswer,
+    required TResult Function(NoMoreQuestions value) noMoreQuestions,
   }) {
     return wrongAnswer(this);
   }
@@ -1412,6 +1464,7 @@ class _$WrongAnswer implements WrongAnswer {
     TResult Function(AnswerConfirmed value)? answerConfirmed,
     TResult Function(WrongAnswer value)? wrongAnswer,
     TResult Function(ValidAnswer value)? validAnswer,
+    TResult Function(NoMoreQuestions value)? noMoreQuestions,
   }) {
     return wrongAnswer?.call(this);
   }
@@ -1428,6 +1481,7 @@ class _$WrongAnswer implements WrongAnswer {
     TResult Function(AnswerConfirmed value)? answerConfirmed,
     TResult Function(WrongAnswer value)? wrongAnswer,
     TResult Function(ValidAnswer value)? validAnswer,
+    TResult Function(NoMoreQuestions value)? noMoreQuestions,
     required TResult orElse(),
   }) {
     if (wrongAnswer != null) {
@@ -1520,6 +1574,7 @@ class _$ValidAnswer implements ValidAnswer {
     required TResult Function(Question question) answerConfirmed,
     required TResult Function(Question question) wrongAnswer,
     required TResult Function(Question question) validAnswer,
+    required TResult Function() noMoreQuestions,
   }) {
     return validAnswer(question);
   }
@@ -1536,6 +1591,7 @@ class _$ValidAnswer implements ValidAnswer {
     TResult Function(Question question)? answerConfirmed,
     TResult Function(Question question)? wrongAnswer,
     TResult Function(Question question)? validAnswer,
+    TResult Function()? noMoreQuestions,
   }) {
     return validAnswer?.call(question);
   }
@@ -1552,6 +1608,7 @@ class _$ValidAnswer implements ValidAnswer {
     TResult Function(Question question)? answerConfirmed,
     TResult Function(Question question)? wrongAnswer,
     TResult Function(Question question)? validAnswer,
+    TResult Function()? noMoreQuestions,
     required TResult orElse(),
   }) {
     if (validAnswer != null) {
@@ -1572,6 +1629,7 @@ class _$ValidAnswer implements ValidAnswer {
     required TResult Function(AnswerConfirmed value) answerConfirmed,
     required TResult Function(WrongAnswer value) wrongAnswer,
     required TResult Function(ValidAnswer value) validAnswer,
+    required TResult Function(NoMoreQuestions value) noMoreQuestions,
   }) {
     return validAnswer(this);
   }
@@ -1588,6 +1646,7 @@ class _$ValidAnswer implements ValidAnswer {
     TResult Function(AnswerConfirmed value)? answerConfirmed,
     TResult Function(WrongAnswer value)? wrongAnswer,
     TResult Function(ValidAnswer value)? validAnswer,
+    TResult Function(NoMoreQuestions value)? noMoreQuestions,
   }) {
     return validAnswer?.call(this);
   }
@@ -1604,6 +1663,7 @@ class _$ValidAnswer implements ValidAnswer {
     TResult Function(AnswerConfirmed value)? answerConfirmed,
     TResult Function(WrongAnswer value)? wrongAnswer,
     TResult Function(ValidAnswer value)? validAnswer,
+    TResult Function(NoMoreQuestions value)? noMoreQuestions,
     required TResult orElse(),
   }) {
     if (validAnswer != null) {
@@ -1620,4 +1680,158 @@ abstract class ValidAnswer implements GameStatus {
   @JsonKey(ignore: true)
   _$$ValidAnswerCopyWith<_$ValidAnswer> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$NoMoreQuestionsCopyWith<$Res> {
+  factory _$$NoMoreQuestionsCopyWith(
+          _$NoMoreQuestions value, $Res Function(_$NoMoreQuestions) then) =
+      __$$NoMoreQuestionsCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$NoMoreQuestionsCopyWithImpl<$Res>
+    extends _$GameStatusCopyWithImpl<$Res>
+    implements _$$NoMoreQuestionsCopyWith<$Res> {
+  __$$NoMoreQuestionsCopyWithImpl(
+      _$NoMoreQuestions _value, $Res Function(_$NoMoreQuestions) _then)
+      : super(_value, (v) => _then(v as _$NoMoreQuestions));
+
+  @override
+  _$NoMoreQuestions get _value => super._value as _$NoMoreQuestions;
+}
+
+/// @nodoc
+
+class _$NoMoreQuestions implements NoMoreQuestions {
+  const _$NoMoreQuestions();
+
+  @override
+  String toString() {
+    return 'GameStatus.noMoreQuestions()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$NoMoreQuestions);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() questionsLoaded,
+    required TResult Function(String message) error,
+    required TResult Function(Question question) questionSelected,
+    required TResult Function(Question question, String selectedAnswer)
+        answerSelected,
+    required TResult Function(Question question) answerConfirmed,
+    required TResult Function(Question question) wrongAnswer,
+    required TResult Function(Question question) validAnswer,
+    required TResult Function() noMoreQuestions,
+  }) {
+    return noMoreQuestions();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? questionsLoaded,
+    TResult Function(String message)? error,
+    TResult Function(Question question)? questionSelected,
+    TResult Function(Question question, String selectedAnswer)? answerSelected,
+    TResult Function(Question question)? answerConfirmed,
+    TResult Function(Question question)? wrongAnswer,
+    TResult Function(Question question)? validAnswer,
+    TResult Function()? noMoreQuestions,
+  }) {
+    return noMoreQuestions?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? questionsLoaded,
+    TResult Function(String message)? error,
+    TResult Function(Question question)? questionSelected,
+    TResult Function(Question question, String selectedAnswer)? answerSelected,
+    TResult Function(Question question)? answerConfirmed,
+    TResult Function(Question question)? wrongAnswer,
+    TResult Function(Question question)? validAnswer,
+    TResult Function()? noMoreQuestions,
+    required TResult orElse(),
+  }) {
+    if (noMoreQuestions != null) {
+      return noMoreQuestions();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
+    required TResult Function(Loading value) loading,
+    required TResult Function(QuestionsLoaded value) questionsLoaded,
+    required TResult Function(Error value) error,
+    required TResult Function(QuestionSelected value) questionSelected,
+    required TResult Function(AnswerSelected value) answerSelected,
+    required TResult Function(AnswerConfirmed value) answerConfirmed,
+    required TResult Function(WrongAnswer value) wrongAnswer,
+    required TResult Function(ValidAnswer value) validAnswer,
+    required TResult Function(NoMoreQuestions value) noMoreQuestions,
+  }) {
+    return noMoreQuestions(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(Loading value)? loading,
+    TResult Function(QuestionsLoaded value)? questionsLoaded,
+    TResult Function(Error value)? error,
+    TResult Function(QuestionSelected value)? questionSelected,
+    TResult Function(AnswerSelected value)? answerSelected,
+    TResult Function(AnswerConfirmed value)? answerConfirmed,
+    TResult Function(WrongAnswer value)? wrongAnswer,
+    TResult Function(ValidAnswer value)? validAnswer,
+    TResult Function(NoMoreQuestions value)? noMoreQuestions,
+  }) {
+    return noMoreQuestions?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(Loading value)? loading,
+    TResult Function(QuestionsLoaded value)? questionsLoaded,
+    TResult Function(Error value)? error,
+    TResult Function(QuestionSelected value)? questionSelected,
+    TResult Function(AnswerSelected value)? answerSelected,
+    TResult Function(AnswerConfirmed value)? answerConfirmed,
+    TResult Function(WrongAnswer value)? wrongAnswer,
+    TResult Function(ValidAnswer value)? validAnswer,
+    TResult Function(NoMoreQuestions value)? noMoreQuestions,
+    required TResult orElse(),
+  }) {
+    if (noMoreQuestions != null) {
+      return noMoreQuestions(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class NoMoreQuestions implements GameStatus {
+  const factory NoMoreQuestions() = _$NoMoreQuestions;
 }

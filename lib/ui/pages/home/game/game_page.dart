@@ -1,8 +1,12 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:triviaflutter/common/models/question.dart';
 import 'package:triviaflutter/common/repository/question_repository.dart';
 import 'package:triviaflutter/ui/pages/home/game/bloc/game_cubit.dart';
+import 'package:triviaflutter/ui/pages/home/game/widgets/end_daily_questions.dart';
+import 'package:triviaflutter/ui/pages/home/game/widgets/question_loading.dart';
 import 'package:triviaflutter/ui/pages/home/game/widgets/question_view.dart';
 
 class GamePage extends StatefulWidget {
@@ -33,9 +37,18 @@ class _GamePageState extends State<GamePage> {
           return gameCubit!;
         },
         child: BlocConsumer<GameCubit, GameStatus>(
-          listener: (context, state) {},
+          listener: (context, state) {
+            return;
+          },
           builder: (context, state) {
-            if (state is QuestionSelected || state is AnswerSelected) {
+            if (state is Loading) {
+              return QuestionLoading();
+            }
+
+            if (state is QuestionSelected ||
+                state is AnswerSelected ||
+                state is ValidAnswer ||
+                state is WrongAnswer) {
               return QuestionView(
                 question: gameCubit!.question,
                 answers: gameCubit!.question.answers,
@@ -43,7 +56,11 @@ class _GamePageState extends State<GamePage> {
               );
             }
 
-            return const CircularProgressIndicator();
+            if (state is NoMoreQuestions) {
+              return EndDailyQuestions();
+            }
+
+            return const QuestionLoading();
           },
         ),
       ),
