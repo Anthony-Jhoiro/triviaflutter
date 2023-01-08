@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:triviaflutter/common/repository/current_user_repository.dart';
-import 'package:triviaflutter/common/repository/user_repository.dart';
 import 'package:triviaflutter/ui/pages/home/profile/rounded_score.dart';
 import 'package:triviaflutter/ui/pages/home/profile/widgets/image_picker_mode_selector.dart';
 
@@ -22,7 +21,7 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   final CurrentUserRepository currentUserRepository =
       CurrentUserRepository.getInstance();
-  User user = UserRepository.getInstance().currentUser;
+  User user = CurrentUserRepository.getInstance().currentUser;
 
   @override
   void initState() {

@@ -25,7 +25,7 @@ class SignupCubit extends Cubit<SignupState> {
   }) : super(SignupState.initial());
 
   redirectIfLoggedIn(BuildContext context) async {
-    var currentUser = await userRepository.getCurrentUser();
+    var currentUser = await currentUserRepository.getCurrentUser();
     if (currentUser != null) {
       emit(SignupState.loggedIn());
     } else {
@@ -56,7 +56,7 @@ class SignupCubit extends Cubit<SignupState> {
     emit(SignupState.accountFetching());
     try {
       await authRepository.verifySmsCode(verificationId, smsCode);
-      final user = await userRepository.getCurrentUser();
+      final user = await currentUserRepository.getCurrentUser();
       if (user == null) {
         emit(SignupState.accountCreation());
       } else {
