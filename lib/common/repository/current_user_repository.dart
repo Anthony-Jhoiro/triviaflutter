@@ -77,6 +77,7 @@ class CurrentUserRepository {
 
   Future<void> _updateCurrentUser(User user) async {
     await _userFirestore.updateUser(user);
+    _currentUser = user;
     _userStreamController.add(user);
   }
 
