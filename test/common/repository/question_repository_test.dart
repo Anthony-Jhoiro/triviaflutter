@@ -108,6 +108,43 @@ void main() {
     );
 
     test(
+      "getQuestionsOfTheDay should fetch questions from the API if not in firestore",
+      () async {
+        final document = QuestionDocumentDto(results: [questionDto]);
+        when(() => user_repository.currentUser).thenReturn(currentUser);
+        when(() => question_firebase.getTodayQuestions()).thenAnswer(
+          (_) => Future.value(null),
+        );
+
+        when(() => question_api.getQuestionsOfTheDay()).thenAnswer(
+          (_) => Future.value(document),
+        );
+
+        when(() => question_firebase.insertQuestions(document))
+            .thenAnswer((_) => Future.value());
+
+        final questions = await questionRepository.getQuestionsOfTheDay();
+
+        verify(() => question_firebase.insertQuestions(document)).called(1);
+
+        expect(questions.length, 1);
+
+        final receivedQuestion = questions[0];
+
+        expect(receivedQuestion.difficulty, questionDto.difficulty);
+        expect(receivedQuestion.question, questionDto.question);
+        expect(receivedQuestion.correct_answer, questionDto.correct_answer);
+        expect(
+          receivedQuestion.answers.contains(questionDto.correct_answer),
+          true,
+        );
+        for (var answer in questionDto.incorrect_answers) {
+          expect(receivedQuestion.answers.contains(answer), true);
+        }
+      },
+    );
+
+    test(
       "getQuestionsOfTheDay should only return not-answered questions",
       () async {
         when(() => user_repository.currentUser).thenReturn(currentUser.copyWith(
