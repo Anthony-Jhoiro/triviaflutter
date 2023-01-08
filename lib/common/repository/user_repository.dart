@@ -1,9 +1,7 @@
 import 'dart:async';
-import 'dart:io';
 
-import 'package:firebase_storage/firebase_storage.dart';
-import 'package:triviaflutter/common/datasources/remote/user_firestore.dart';
 import 'package:triviaflutter/common/datasources/remote/auth_firebase.dart';
+import 'package:triviaflutter/common/datasources/remote/user_firestore.dart';
 
 import '../models/user.dart';
 
@@ -25,10 +23,12 @@ class UserRepository {
   // Attributes
 
   User? _currentUser;
+
   User get currentUser => _currentUser!;
 
   StreamController<User> _userStreamController = StreamController<User>();
   late Stream<User> _userStream = _userStreamController.stream;
+
   Stream<User> get userStream => _userStream;
 
   // User Crud
@@ -62,42 +62,5 @@ class UserRepository {
     }
 
     return appUser;
-  }
-
-  Future<void> logout() async {
-    await _authFirebase.logout();
-    this._currentUser = null;
-  }
-
-  Future<void> _updateCurrentUser(User user) async {
-    await _userFirestore.updateUser(user);
-    _userStreamController.add(user);
-  }
-
-  Future<void> answerQuestion(int questionScore, int questionIndex) async {
-    // The current date time is sent with 0 for the time attributes to make it easier to retrieve
-    final currentDateTime = DateTime.now();
-    final newUser = _currentUser!.copyWith(
-      score: _currentUser!.score + questionScore,
-      lastAnswerDate: DateTime(
-          currentDateTime.year, currentDateTime.month, currentDateTime.day),
-      lastAnswerIndex: questionIndex,
-    );
-    await _updateCurrentUser(newUser);
-  }
-
-  Future<void> setAvatarImage(File avatarFile) async {
-    final storageRef = FirebaseStorage.instance.ref();
-
-    final picture = storageRef.child('profilePictures/${_currentUser!.id}.jpg');
-
-    await picture.putFile(avatarFile);
-
-    final downloadUrl = await picture.getDownloadURL();
-
-    final newUser = _currentUser!.copyWith(
-      avatar: downloadUrl,
-    );
-    await _updateCurrentUser(newUser);
   }
 }

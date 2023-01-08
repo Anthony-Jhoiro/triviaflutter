@@ -5,14 +5,14 @@ import 'package:triviaflutter/common/datasources/remote/question_firestore.dart'
 import 'package:triviaflutter/common/models/dto/question_document_dto/question_document_dto.dart';
 import 'package:triviaflutter/common/models/dto/question_dto/question_dto.dart';
 import 'package:triviaflutter/common/models/user.dart';
+import 'package:triviaflutter/common/repository/current_user_repository.dart';
 import 'package:triviaflutter/common/repository/question_repository.dart';
-import 'package:triviaflutter/common/repository/user_repository.dart';
 
 class MockQuestionFirebase extends Mock implements QuestionFirebase {}
 
 class MockQuestionApi extends Mock implements QuestionApi {}
 
-class MockUserRepository extends Mock implements UserRepository {}
+class MockCurrentUserRepository extends Mock implements CurrentUserRepository {}
 
 final questionDto = QuestionDto(
   category: "rdm",
@@ -44,47 +44,47 @@ final currentUser = User(
 
 void main() {
   group("QuestionRepository", () {
-    final question_firebase = MockQuestionFirebase();
-    final question_api = MockQuestionApi();
-    final user_repository = MockUserRepository();
+    final questionFirebase = MockQuestionFirebase();
+    final questionApi = MockQuestionApi();
+    final currentUserRepository = MockCurrentUserRepository();
 
     final questionRepository = QuestionRepository(
-      question_firebase: question_firebase,
-      question_api: question_api,
-      user_repository: user_repository,
+      questionFirebase: questionFirebase,
+      questionApi: questionApi,
+      currentUserRepository: currentUserRepository,
     );
 
     test("answerQuestion", () async {
       final questionScore = 5;
       final questionIndex = 7;
 
-      when(() => user_repository.answerQuestion(questionScore, questionIndex))
-          .thenAnswer((_) => Future.value());
+      when(() => currentUserRepository.answerQuestion(
+          questionScore, questionIndex)).thenAnswer((_) => Future.value());
 
       await questionRepository.answerQuestion(questionScore, questionIndex);
 
-      verify(() => user_repository.answerQuestion(questionScore, questionIndex))
-          .called(1);
+      verify(() => currentUserRepository.answerQuestion(
+          questionScore, questionIndex)).called(1);
     });
 
     test("answerQuestion", () async {
       final questionScore = 5;
       final questionIndex = 7;
 
-      when(() => user_repository.answerQuestion(questionScore, questionIndex))
-          .thenAnswer((_) => Future.value());
+      when(() => currentUserRepository.answerQuestion(
+          questionScore, questionIndex)).thenAnswer((_) => Future.value());
 
       await questionRepository.answerQuestion(questionScore, questionIndex);
 
-      verify(() => user_repository.answerQuestion(questionScore, questionIndex))
-          .called(1);
+      verify(() => currentUserRepository.answerQuestion(
+          questionScore, questionIndex)).called(1);
     });
 
     test(
       "getQuestionsOfTheDay should get already existing questions",
       () async {
-        when(() => user_repository.currentUser).thenReturn(currentUser);
-        when(() => question_firebase.getTodayQuestions()).thenAnswer(
+        when(() => currentUserRepository.currentUser).thenReturn(currentUser);
+        when(() => questionFirebase.getTodayQuestions()).thenAnswer(
           (_) => Future.value(QuestionDocumentDto(results: [questionDto])),
         );
 
@@ -111,21 +111,21 @@ void main() {
       "getQuestionsOfTheDay should fetch questions from the API if not in firestore",
       () async {
         final document = QuestionDocumentDto(results: [questionDto]);
-        when(() => user_repository.currentUser).thenReturn(currentUser);
-        when(() => question_firebase.getTodayQuestions()).thenAnswer(
+        when(() => currentUserRepository.currentUser).thenReturn(currentUser);
+        when(() => questionFirebase.getTodayQuestions()).thenAnswer(
           (_) => Future.value(null),
         );
 
-        when(() => question_api.getQuestionsOfTheDay()).thenAnswer(
+        when(() => questionApi.getQuestionsOfTheDay()).thenAnswer(
           (_) => Future.value(document),
         );
 
-        when(() => question_firebase.insertQuestions(document))
+        when(() => questionFirebase.insertQuestions(document))
             .thenAnswer((_) => Future.value());
 
         final questions = await questionRepository.getQuestionsOfTheDay();
 
-        verify(() => question_firebase.insertQuestions(document)).called(1);
+        verify(() => questionFirebase.insertQuestions(document)).called(1);
 
         expect(questions.length, 1);
 
@@ -147,11 +147,12 @@ void main() {
     test(
       "getQuestionsOfTheDay should only return not-answered questions",
       () async {
-        when(() => user_repository.currentUser).thenReturn(currentUser.copyWith(
+        when(() => currentUserRepository.currentUser)
+            .thenReturn(currentUser.copyWith(
           lastAnswerDate: DateTime.now(),
           lastAnswerIndex: 0,
         ));
-        when(() => question_firebase.getTodayQuestions()).thenAnswer(
+        when(() => questionFirebase.getTodayQuestions()).thenAnswer(
           (_) => Future.value(
             QuestionDocumentDto(
               results: [questionDto, questionDto2],

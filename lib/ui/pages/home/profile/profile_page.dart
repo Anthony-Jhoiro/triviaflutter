@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:triviaflutter/common/repository/current_user_repository.dart';
 import 'package:triviaflutter/common/repository/user_repository.dart';
 import 'package:triviaflutter/ui/pages/home/profile/rounded_score.dart';
 import 'package:triviaflutter/ui/pages/home/profile/widgets/image_picker_mode_selector.dart';
@@ -19,14 +20,15 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
-  final UserRepository userRepository = UserRepository.getInstance();
+  final CurrentUserRepository currentUserRepository =
+      CurrentUserRepository.getInstance();
   User user = UserRepository.getInstance().currentUser;
 
   @override
   void initState() {
     super.initState();
 
-    userRepository.userStream.listen((user) {
+    currentUserRepository.userStream.listen((user) {
       setState(() {
         this.user = user;
       });
@@ -34,7 +36,7 @@ class _ProfilePageState extends State<ProfilePage> {
   }
 
   void logout(BuildContext context) async {
-    await UserRepository.getInstance().logout();
+    await currentUserRepository.logout();
     context.goNamed("signup");
   }
 
@@ -47,7 +49,7 @@ class _ProfilePageState extends State<ProfilePage> {
 
     if (pickedFile == null) return;
 
-    await userRepository.setAvatarImage(File(pickedFile.path));
+    await currentUserRepository.setAvatarImage(File(pickedFile.path));
   }
 
   @override

@@ -3,7 +3,7 @@ import 'package:triviaflutter/common/datasources/remote/question_api.dart';
 import 'package:triviaflutter/common/datasources/remote/question_firestore.dart';
 import 'package:triviaflutter/common/models/dto/question_dto/question_dto.dart';
 import 'package:triviaflutter/common/models/question.dart';
-import 'package:triviaflutter/common/repository/user_repository.dart';
+import 'package:triviaflutter/common/repository/current_user_repository.dart';
 
 import '../../core/tools/date_utils.dart';
 
@@ -16,26 +16,26 @@ class QuestionRepository {
     return _instance!;
   }
 
-  late QuestionFirebase _question_firebase;
-  late QuestionApi _question_api;
-  late UserRepository _user_repository;
+  late QuestionFirebase _questionFirebase;
+  late QuestionApi _questionApi;
+  late CurrentUserRepository _currentUserRepository;
 
   QuestionRepository._() {
-    _question_firebase = QuestionFirebase.getInstance();
-    _question_api = QuestionApi.getInstance();
-    _user_repository = UserRepository.getInstance();
+    _questionFirebase = QuestionFirebase.getInstance();
+    _questionApi = QuestionApi.getInstance();
+    _currentUserRepository = CurrentUserRepository.getInstance();
   }
 
   // This constructor should be only available during testing
   @visibleForTesting
   QuestionRepository({
-    required QuestionFirebase question_firebase,
-    required QuestionApi question_api,
-    required UserRepository user_repository,
+    required QuestionFirebase questionFirebase,
+    required QuestionApi questionApi,
+    required CurrentUserRepository currentUserRepository,
   }) {
-    _question_firebase = question_firebase;
-    _question_api = question_api;
-    _user_repository = user_repository;
+    _questionFirebase = questionFirebase;
+    _questionApi = questionApi;
+    _currentUserRepository = currentUserRepository;
     _instance = this;
   }
 
@@ -52,7 +52,7 @@ class QuestionRepository {
   }
 
   Future<List<Question>> getQuestionsOfTheDay() async {
-    final currentUser = await _user_repository.currentUser;
+    final currentUser = await _currentUserRepository.currentUser;
 
     var spliceIndex = 0;
     if (currentUser.lastAnswerDate != null &&
@@ -61,7 +61,7 @@ class QuestionRepository {
       spliceIndex = currentUser.lastAnswerIndex! + 1;
     }
 
-    var existingQuestions = await _question_firebase.getTodayQuestions();
+    var existingQuestions = await _questionFirebase.getTodayQuestions();
 
     if (existingQuestions != null) {
       return existingQuestions.results
@@ -70,8 +70,8 @@ class QuestionRepository {
           .toList();
     }
 
-    final newQuestionDocument = await _question_api.getQuestionsOfTheDay();
-    await _question_firebase.insertQuestions(newQuestionDocument);
+    final newQuestionDocument = await _questionApi.getQuestionsOfTheDay();
+    await _questionFirebase.insertQuestions(newQuestionDocument);
 
     return newQuestionDocument.results
         .sublist(spliceIndex)
@@ -80,6 +80,6 @@ class QuestionRepository {
   }
 
   Future<void> answerQuestion(int questionScore, int questionIndex) {
-    return _user_repository.answerQuestion(questionScore, questionIndex);
+    return _currentUserRepository.answerQuestion(questionScore, questionIndex);
   }
 }

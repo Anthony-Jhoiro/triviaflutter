@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:triviaflutter/common/models/user.dart' as triviauser;
 import 'package:triviaflutter/common/repository/auth_repository.dart';
+import 'package:triviaflutter/common/repository/current_user_repository.dart';
 import 'package:triviaflutter/common/repository/user_repository.dart';
 
 part 'signup_cubit.freezed.dart';
@@ -13,12 +14,14 @@ part 'signup_state.dart';
 class SignupCubit extends Cubit<SignupState> {
   final AuthRepository authRepository;
   final UserRepository userRepository;
+  final CurrentUserRepository currentUserRepository;
   late String verificationId;
   late String phoneNumber;
 
   SignupCubit({
     required this.authRepository,
     required this.userRepository,
+    required this.currentUserRepository,
   }) : super(SignupState.initial());
 
   redirectIfLoggedIn(BuildContext context) async {
@@ -40,7 +43,7 @@ class SignupCubit extends Cubit<SignupState> {
       emit(SignupState.phoneNumberVerificationCodeSent(verificationId));
     } on FirebaseAuthException {
       emit(SignupState.phoneNumberSubmitionError(
-        "Envoie du code de vérification impossible, veuiller réessayer ulterieurement.",
+        "Envoie du code de vérification impossible, veuillez réessayer ultérieurement.",
       ));
     }
   }
@@ -61,7 +64,7 @@ class SignupCubit extends Cubit<SignupState> {
       }
     } catch (err) {
       emit(SignupState.accountFetchingError(
-        "Impossible de récupérer le compte, merci de réessayer ulterieurement.",
+        "Impossible de récupérer le compte, merci de réessayer ultérieurement.",
       ));
     }
   }
@@ -82,7 +85,7 @@ class SignupCubit extends Cubit<SignupState> {
       emit(SignupState.loggedIn());
     } catch (err) {
       emit(SignupState.accountCreationError(
-        "Creation du compte impossible, merci de réessayer ulterieurement.",
+        "Creation du compte impossible, merci de réessayer ultérieurement.",
       ));
     }
   }

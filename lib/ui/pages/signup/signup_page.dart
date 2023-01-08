@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 import 'package:triviaflutter/common/repository/auth_repository.dart';
+import 'package:triviaflutter/common/repository/current_user_repository.dart';
 import 'package:triviaflutter/ui/pages/signup/bloc/signup_cubit.dart';
 import 'package:triviaflutter/ui/pages/signup/widgets/account_creation_screen.dart';
 import 'package:triviaflutter/ui/pages/signup/widgets/phonenumber_form_screen.dart';
@@ -35,12 +36,17 @@ class _SignupPageState extends State<SignupPage> {
         RepositoryProvider<UserRepository>(
           create: (context) => UserRepository.getInstance(),
         ),
+        RepositoryProvider<CurrentUserRepository>(
+          create: (context) => CurrentUserRepository.getInstance(),
+        ),
       ],
       child: BlocProvider<SignupCubit>(
         create: (context) {
           signupCubit = SignupCubit(
             authRepository: RepositoryProvider.of<AuthRepository>(context),
             userRepository: RepositoryProvider.of<UserRepository>(context),
+            currentUserRepository:
+                RepositoryProvider.of<CurrentUserRepository>(context),
           );
 
           return signupCubit!..redirectIfLoggedIn(context);
