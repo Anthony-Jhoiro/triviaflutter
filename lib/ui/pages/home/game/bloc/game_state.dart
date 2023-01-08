@@ -23,4 +23,6 @@ class GameStatus with _$GameStatus {
   const factory GameStatus.wrongAnswer(Question question) = WrongAnswer;
 
   const factory GameStatus.validAnswer(Question question) = ValidAnswer;
+
+  const factory GameStatus.noMoreQuestions() = NoMoreQuestions;
 }
