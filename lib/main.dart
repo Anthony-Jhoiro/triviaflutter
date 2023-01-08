@@ -3,14 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:json_theme/src/codec/theme_decoder.dart';
 import 'package:triviaflutter/ui/theme.dart';
 
-import 'firebase_options.dart';
 import 'main_router.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+
+  await Firebase.initializeApp();
 
   runApp(const MyApp());
 }

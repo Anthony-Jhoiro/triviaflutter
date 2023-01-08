@@ -46,23 +46,5 @@ class _RankingCubitProviderState extends State<RankingCubitProvider> {
         ),
       ),
     );
-
-    //   return RepositoryProvider<UserRepository>(
-    //       create: (_) => UserRepository.getInstance(),
-    //       child: BlocProvider<RankingCubit>(
-    //       create: (context)
-    //   {
-    //     rankingCubit = RankingCubit(
-    //       userRepository: RepositoryProvider.of<UserRepository>(context),
-    //     );
-    //
-    //     return rankingCubit!
-    //       ..loadUsers();
-    //   },
-    //   child: BlocConsumer<RankingCubit, RankingState>(
-    //
-    //   ),
-    //
-    // ,}
   }
 }
