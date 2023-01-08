@@ -26,8 +26,6 @@ class ProfileCubit extends Cubit<ProfileStatus> {
     emit(ProfileStatus.profileLoaded(user!));
 
     await for (final user in currentUserRepository.userStream) {
-      print("here !");
-      print(user.score);
       emit(ProfileStatus.profileLoaded(user));
     }
   }

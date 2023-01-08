@@ -56,7 +56,9 @@ class QuestionView extends StatelessWidget {
     return Column(
       children: [
         Expanded(
-          child: deck,
+          child: AbsorbPointer(
+            child: deck,
+          ),
         ),
         Expanded(
           child: Column(
